@@ -1,5 +1,6 @@
 ## 개발을 위한 로컬 세팅.
 #### # *.md 확장자 명은 Markdown 문법으로 작성된 파일이다.
+#### https://github.com/sujaykundu777/devlopr-jekyll <- 해당 테마 포크 , fork의 경우 잔디가 심어지지 않아 신규 레포 생성
 
 ### 1. 원하는 테마 Fork 후 초기 세팅 정리
 - 레퍼지토리 이름 정리 : 7271kim(개인 계정 이름).github.com
