@@ -1,6 +1,6 @@
 ## 개발을 위한 로컬 세팅.
 #### # *.md 확장자 명은 Markdown 문법으로 작성된 파일이다.
- 
+
 ### 1. 원하는 테마 Fork 후 초기 세팅 정리
 - 레퍼지토리 이름 정리 : 7271kim(개인 계정 이름).github.com
 - _config.yml 설정 변경 : URL 수정  >> url: "7271kim.github.com" 
