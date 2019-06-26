@@ -1,0 +1,86 @@
+--- 
+layout: default 
+---
+
+    <div class="row">
+
+        <div class="col-md-8">
+            <ul>
+                <div class="row">
+                    {% for post in paginator.posts %}
+                    
+                    <div class="card blog-post col-md-4 col-sm-6 col-xs-12 no-margin">
+                        <a href="{{ post.url | prepend: site.baseurl }}">
+                            <img class="card-img-top" src="/assets/img/{{ post.thumbnail }}" alt="{{ post.title }}">
+                        </a>
+                        <div class="card-body center">
+                            <img src="/assets/img/{{ site.author_logo }}" class="author-profile-img bottom-margin">
+                            <h4 class="card-title">{{ post.title }}</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ post.date | date: "%Y-%m-%d" }}</h6>
+                            <p class="card-text">{{ post.summary }} </p>
+                            <a href="{{ post.url | prepend: site.baseurl }}" data-disqus-identifier="{{ post.url }}" class="btn btn-primary btn-lg">Read</a>
+                            <span class="disqus-comment-count" data-disqus-identifier="{{ post.url }}"></span>
+                        </div>
+                    </div>
+                   
+                    {% endfor %}
+                </div>
+                 <!-- _layouts/home.html -->
+                {% include pagination.html %}
+            </ul>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header"> About {{ site.author }} </div>
+                <div class="card-body text-dark">
+                   {% for intro in site.intros %}
+                    <li class="tag-head"> {{intro}}</li>
+                   {% endfor %}
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">카테고리 </div>
+                <div class="card-body text-dark">
+                    {% for tag in site.categories %} {% capture tag_name %}{{ tag | first }}{% endcapture %}
+                    <!-- 카테고리 명은 { category | first } 으로 추출 테고리에 포함된 포스트 갯수는 { category | last | size} 으로 추출한다. -->
+                    <div id="#{{ tag_name | slugize }}"></div>
+                    <!-- slugize: 소문자화 -->
+                    <li class="tag-head">
+                        <a href="{{ site.baseurl }}/blog/categories/{{ tag_name }}">
+                        {% assign tagName = tag_name %}
+                        {% for item in site.categories_korea %}
+                            {% if item[tagName] %}
+                                {% assign tagName = item[tagName] %}
+                            {% endif %}
+                        {% endfor %}
+                        {{ tagName }}
+                         ( {{ tag | last | size }} ) </a>
+                         <!-- 카테고리 명은 { category | first } 으로 추출 테고리에 포함된 포스트 갯수는 { category | last | size} 으로 추출한다. -->
+                    </li>
+                    <a name="{{ tag_name | slugize }}"></a>
+
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">태그 </div>
+                <div class="card-body text-dark">
+                    {% assign tags = site.tags %}
+                    {% for category in tags %}
+                        {% assign postList = category[1] %}
+                        {% assign categoryInfo = category[0] %}
+                        {% for category in categoryInfo %}
+                             {% assign tagUrl = category[0] %}
+                             {% assign tagName = category[1] %}
+                              <div id="#{{ tagName | slugize }}"></div>
+			                  <!-- slugize: 소문자화 -->
+			                  <li class="tag-head">
+			                      <a href="{{ site.baseurl }}/blog/tags/{{ tagUrl }}"> #{{ tagName }} ( {{ postList | size }} ) </a>
+			                  </li>
+			                  <a name="{{ tagName | slugize }}"></a>
+                        {% endfor %}
+                     {% endfor %}
+                </div>
+            </div>
+        </div>

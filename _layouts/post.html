@@ -1,0 +1,125 @@
+--- 
+layout: default 
+comments: true
+---
+    <script id="dsq-count-scr" src="//7271kim.disqus.com/count.js" async></script>
+    <nav class="margin-top-10" aria-label="breadcrumb" role="navigation">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/blog/categories">카테고리</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/blog/tags">태그</a>
+            </li>
+            <li class="breadcrumb-item active no-br" aria-current="page">{{ page.title }}</li>
+        </ol>
+    </nav>
+    <div class="row">
+    <div class="col-lg-8">
+        <article class="card" itemscope itemtype="http://schema.org/BlogPosting">
+            <div class="card-header">
+                <!-- <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1> -->
+                <h4 class="post-meta">{{ page.summary }}</h4>
+                <p class="post-summary">Posted by : {% if page.author %}
+                    <img src="/assets/img/{{ site.author_logo }}" class="author-profile-img">
+                    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                        <span itemprop="name">{{ page.author }}</span>
+                    </span>{% endif %} at
+                    <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+                </p>
+                <span class="disqus-comment-count" data-disqus-identifier="{{ page.url }}"></span>
+                <p>
+                    {%- include share.html -%}
+                </p>
+                <div class="post-categories">
+                    {% if post %} {% assign categories = post.categories %} {% else %} {% assign categories = page.categories %} {% endif %}
+                                    카테고리 : {% for category in categories %}
+                    <a href="{{site.baseurl}}/blog/categories/{{category|slugize}}">
+                        {% assign tagName = category %}
+                        {% for item in site.categories_korea %}
+                            {% if item[tagName] %}
+                                {% assign tagName = item[tagName] %}
+                            {% endif %}
+                        {% endfor %}
+                        {{ tagName }}
+                       </a>
+                    {% unless forloop.last %}&nbsp;{% endunless %} {% endfor %}
+                </div>
+                <div class="post-categories">
+                    {% assign categories = page.tags %}
+                                    태그 : 
+                         {% for categoriesChild in categories %}
+                             {% for category in categoriesChild %}
+                    <a href="{{site.baseurl}}/blog/tags/{{category[0]|slugize}}">#{{category[1]}}</a>
+                                {% unless forloop.last %}&nbsp;{% endunless %} 
+                             {% endfor %}
+                          {% endfor %}
+                </div>
+            </div>
+            <div class="card-body" itemprop="articleBody">
+                <!-- <img class="card-img-top" src="/assets/img/{{ page.thumbnail }}" alt="{{ post.title }}"> --> 
+                {{ content }}
+                <br/> 
+                {%- include share.html -%}
+                <div class="page-navigation">
+	                {% if page.pre %}
+	                    <a href="{{ post.url | prepend: page.pre }}">이전글</a>
+	                {% endif %}
+	                {% if page.nex %}
+	                    <a class="float-right" href="{{ post.url | prepend: page.nex }}">다음글</a>
+	                {% endif %}
+                </div>
+            </div>
+            <div id="disqus_thread"></div>
+        </article>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">카테고리 </div>
+            <div class="card-body text-dark">
+                {% for tag in site.categories %} {% capture tag_name %}{{ tag | first }}{% endcapture %}
+                <div id="#{{ tag_name | slugize }}"></div>
+                <li class="tag-head">
+                    <a href="{{ site.baseurl }}/blog/categories/{{ tag_name }}">
+                     {% assign tagName = tag_name %}
+                     {% for item in site.categories_korea %}
+                         {% if item[tagName] %}
+                             {% assign tagName = item[tagName] %}
+                         {% endif %}
+                     {% endfor %}
+                     {{ tagName }} ( {{ tag | last | size }} )
+                    </a>
+                </li>
+                <a name="{{ tag_name | slugize }}"></a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">태그 </div>
+            <div class="card-body text-dark">
+                {% assign tags = site.tags %}
+                    {% for category in tags %}
+                        {% assign postList = category[1] %}
+                        {% assign categoryInfo = category[0] %}
+                        {% for category in categoryInfo %}
+                             {% assign tagUrl = category[0] %}
+                             {% assign tagName = category[1] %}
+                              <div id="#{{ tagName | slugize }}"></div>
+                              <!-- slugize: 소문자화 -->
+                              <li class="tag-head">
+                                  <a href="{{ site.baseurl }}/blog/tags/{{ tagUrl }}"> #{{ tagName }} ( {{ postList | size }} ) </a>
+                              </li>
+                              <a name="{{ tagName | slugize }}"></a>
+                        {% endfor %}
+                     {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- End of Sidebar -->
+    </div>
+    {% if page.comments != false %}
+        {% include disqus_comments.html %}
+    {% endif %}

@@ -1,0 +1,60 @@
+title: 열공하는 개발자
+subtitle: STUDY Kim Seok Jin
+description: 
+ Word 대신 이제는 Git 블로그를 시작해보자
+baseurl: "" 
+url: "7271kim.github.com"
+ 
+# 상단 네비 우측영역에 노출될 페이지 설정
+header_pages: 
+ - "index.md"
+ - "categories/all.md"
+ - "tags/all.md"
+ 
+ # url에 한글을 입력하게 하고 싶지않아 카테고리 한글 , 영문 분기
+categories_korea: 
+ - "jekyll": "지킬 테마"
+ - "gitBlog": "깃 블로그"
+author_logo: profile.png
+disqus_shortname: KIM SEOKJIN
+author: 김석진
+author_bio: jekyll devlopr템플릿으로 Base setting 
+author_email: "7271kim@naver.com"
+author_location: Korea
+author_website_url: "tomcat.honbabzone.com/list.do"
+
+# Main에 자기소개 란
+intros: 
+ - "삼성 글로벌 웹 운영"
+ - "주  삼성  프로젝트 진헹"
+ 
+# Main 및 페이지에서 사용될 소셜 링크 계정 세팅
+#twitter_username: yourusername
+github_username: 7271kim
+#facebook_username: seokjin.kim.16
+#linkedin_username: yourusername
+#behance_username: yourusername
+instagram_username: kimseokjin_albert
+#medium_username: yourusername 
+#telegram_username: yourusername
+#dribbble_username: yourusername 
+#flickr_username: yourusername
+
+# 한번 공부를 위해 세팅해봄
+defaults:
+ -
+  scop:
+   path: "" # 이 빈 문자열은 프로젝트의 모든 파일을 의미함
+   # type: "posts" # 이전 Jekyll 2.2 에서는 `post`
+  values:
+   layout: "default" # 이제 type 이 posts 인 파일에만 레이아웃이 설정될 것입니다.
+   lang: "ko-KR" #모든 페이지 page.lang 을 가지게 됨
+   
+# 페이지 네비 세팅
+# jekyll-paginate-v2 는  GitHub Pages 에서는 이 플러그인을 지원하지 않는다.
+plugins:
+  - jekyll-paginate # 플러그인 사용을 의미한다.(Jekyll 3)
+    # pagination settings
+paginate: 9 # 한 페이지당 보여줄 posts 수
+    # :num은 페이지마다 번호를 각각 부여한다.
+paginate_path: "/page/:num" # 다음 페이지에 해당하는 URL
