@@ -14,6 +14,7 @@ header_pages:
  # url에 한글을 입력하게 하고 싶지않아 카테고리 한글 , 영문 분기
 categories_korea: 
  - "gitBlog": "깃 블로그"
+ - "algorithm": "알고리즘"
 author_logo: profile.png
 disqus_shortname: KIM SEOKJIN
 author: 김석진
