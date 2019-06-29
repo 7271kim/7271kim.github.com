@@ -1,4 +1,4 @@
-## 개발을 위한 로컬 세팅.
+## 개발을 위한 로컬 세팅. 
 #### # *.md 확장자 명은 Markdown 문법으로 작성된 파일이다.
 #### https://github.com/sujaykundu777/devlopr-jekyll <- 해당 테마 포크 , fork의 경우 잔디가 심어지지 않아 신규 레포 생성
 
