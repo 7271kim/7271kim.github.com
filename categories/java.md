@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /blog/categories/java
+permalink: /blog/categories/JAVA
 title: JAVA
 ---
  
