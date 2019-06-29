@@ -3,7 +3,6 @@ title: 나도 GIT블로그 하고싶다.<br/>( 응용편 )
 layout: post
 summary: 깃 블로그의 테마 Jekyll 응용 
 categories: 
-    - jekyll
     - gitBlog
 tags: 
     - difficulty-low: "난이도 하"

@@ -3,7 +3,6 @@ title: 나도 GIT블로그 하고싶다.<br/>( 세팅편 )
 layout: post
 summary: 깃 블로그를 세팅하면서 겪었던 어려운 점
 categories: 
-    - jekyll
     - gitBlog
 tags: 
     - difficulty-low: "난이도 하"

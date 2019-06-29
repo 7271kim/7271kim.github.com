@@ -3,7 +3,6 @@ title: 나도 GIT블로그 하고싶다.<br/>( 요약편 )
 layout: post
 summary: 문법 및 소스가 어느 정도 눈에 들어왔을 때 쉽게 볼 수 있도록 요약 정리 
 categories: 
-    - jekyll
     - gitBlog
 tags: 
     - difficulty-low: "난이도 하"

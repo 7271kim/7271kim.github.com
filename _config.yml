@@ -13,7 +13,6 @@ header_pages:
  
  # url에 한글을 입력하게 하고 싶지않아 카테고리 한글 , 영문 분기
 categories_korea: 
- - "jekyll": "지킬 테마"
  - "gitBlog": "깃 블로그"
 author_logo: profile.png
 disqus_shortname: KIM SEOKJIN
@@ -55,6 +54,6 @@ defaults:
 plugins:
   - jekyll-paginate # 플러그인 사용을 의미한다.(Jekyll 3)
     # pagination settings
-paginate: 9 # 한 페이지당 보여줄 posts 수
+paginate: 6 # 한 페이지당 보여줄 posts 수
     # :num은 페이지마다 번호를 각각 부여한다.
 paginate_path: "/page/:num" # 다음 페이지에 해당하는 URL

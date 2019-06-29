@@ -3,7 +3,6 @@ title: 나도 GIT블로그 하고싶다.<br/>( 문법편  )
 layout: post
 summary: 깃 블로그의 문법이란
 categories: 
-    - jekyll
     - gitBlog
 tags: 
     - difficulty-mid: "난이도 중"
