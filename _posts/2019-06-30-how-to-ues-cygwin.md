@@ -18,7 +18,7 @@ thumbnail: posts/icon-cygwin.png
 
 <p class="bold-text"> 2. 어떤 폴더에서든 우클릭으로 cygwin 열기 세팅 <p>
 - setup-x86_64.exe 설치 파일 다시 실행 chere 설치 <br/> 
-<img src="/assets/img/posts/cygwin/install.png"><br/> 
+<img src="/assets/img/posts/cygwin/install.png" class="ratio-100"><br/> 
 
 <p class="bold-text"> 3. 윈도우 탐색기 > cygwin 우클릭 > 관리자 권한으로 실행 <p>
 - 해당 명령어 실행 : chere -i -t mintty -s bash<br/> 

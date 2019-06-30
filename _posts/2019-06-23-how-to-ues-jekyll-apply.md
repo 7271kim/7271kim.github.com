@@ -6,8 +6,8 @@ categories:
     - gitBlog
 tags: 
     - difficulty-low: "난이도 하"
-pre: "/jekyll/gitblog/2019/06/22/how-to-ues-jekyll-grammer.html"
-nex: "/jekyll/gitblog/2019/06/25/how-to-ues-jekyll-summary.html"
+pre: "/gitblog/2019/06/22/how-to-ues-jekyll-grammer.html"
+nex: "/gitblog/2019/06/25/how-to-ues-jekyll-summary.html"
 author: 김석진
 thumbnail: posts/git-blog.jpg
 ---

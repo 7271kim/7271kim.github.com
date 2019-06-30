@@ -6,8 +6,8 @@ categories:
     - gitBlog
 tags: 
     - difficulty-mid: "난이도 중"
-pre: "/jekyll/gitblog/2019/06/17/how-to-ues-jekyll-settings.html"
-nex: "/jekyll/gitblog/2019/06/23/how-to-ues-jekyll-apply.html"
+pre: "/gitblog/2019/06/17/how-to-ues-jekyll-settings.html"
+nex: "/gitblog/2019/06/23/how-to-ues-jekyll-apply.html"
 author: 김석진
 thumbnail: posts/git-blog.jpg
 ---
@@ -61,7 +61,7 @@ action: grand slam
 
 <br/>
 ### 3. 사용법 비교
- <img src="/assets/img/posts/yaml/yaml2.png" alt='xml,json,yaml 구분'><br/>
+ <img src="/assets/img/posts/yaml/yaml2.png" alt='xml,json,yaml 구분' class="ratio-100"><br/>
  (https://m.blog.naver.com/PostView.nhn?blogId=wideeyed&logNo=221090209367proxyReferer=https%3A%2F%2Fwww.google.com%2F)
  
 
@@ -336,25 +336,25 @@ if else문과 비슷한 역할. 논리적 흐름을 제어한다. <br/><br/>
 
 <h3>YouTube Responsive Embed</h3>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nuwjUZCSB2Y?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/nuwjUZCSB2Y?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
 <hr />
 
 <h3>Vimeo Responsive Embed</h3>
 
-<iframe src="https://player.vimeo.com/video/212114694?title=0&amp;byline=0&amp;portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<iframe src="https://player.vimeo.com/video/212114694?title=0&amp;byline=0&amp;portrait=0" width="100%" height="360" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
 
 <hr />
 
 <h3 id="ted-responsive-embed">TED Responsive Embed</h3>
 
-<iframe src="https://embed.ted.com/talks/ted_halstead_a_climate_solution_where_all_sides_can_win" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
+<iframe src="https://embed.ted.com/talks/ted_halstead_a_climate_solution_where_all_sides_can_win" width="100%" height="360" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
 
 <hr />
 
 <h3 id="twitch-responsive-embed">Twitch Responsive Embed</h3>
 
-<iframe src="https://player.twitch.tv/?autoplay=false&amp;video=v248755437" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+<iframe src="https://player.twitch.tv/?autoplay=false&amp;video=v248755437" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="100%"></iframe>
 
 <hr />
 

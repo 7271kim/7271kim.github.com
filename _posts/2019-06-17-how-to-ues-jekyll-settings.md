@@ -6,7 +6,7 @@ categories:
     - gitBlog
 tags: 
     - difficulty-low: "난이도 하"
-nex: "/jekyll/gitblog/2019/06/22/how-to-ues-jekyll-grammer.html"
+nex: "/gitblog/2019/06/22/how-to-ues-jekyll-grammer.html"
 author: 김석진
 thumbnail: posts/git-blog.jpg
 ---
@@ -34,7 +34,7 @@ thumbnail: posts/git-blog.jpg
 - fork하기 ( 필자의 경우 https://github.com/sujaykundu777/devlopr-jekyll )
 - fork시 Repository name 설정 : <b> 7271kim(개인 계정 이름).github.com </b>
 : 핵심!!! 개인 계정 이름.github.com 으로 Repository name를 해 놓은다면 레퍼지토리 세팅에 하위 이미지처럼 변해있을 것이다.
-<img src="/assets/img/posts/yaml/github.png" >
+<img src="/assets/img/posts/yaml/github.png" class="ratio-100">
 - _config.yml 설정 변경 : URL 수정  => url: "7271kim.github.com" 
 - 접속확인 : <a href="https://7271kim.github.io/" target="_blank">https://7271kim.github.io/</a>
 
