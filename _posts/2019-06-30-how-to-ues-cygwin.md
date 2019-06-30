@@ -13,7 +13,7 @@ thumbnail: posts/icon-cygwin.png
 ##### 실용주의 프로그래머를 읽다가 중간에 나온 윈도우에서도 리눅스 쉘 스크립팅 명령어 사용 가능한 프로그램 
 <br>
 <p class="bold-text"> 1. 설치하기 <p>
-- <a href="https://cygwin.com/install.html" target="_blank">https://cygwin.com/install.html</a>
+- <a href="https://cygwin.com/install.html" target="_blank">https://cygwin.com/install.html</a><br/> 
 - 설치 진행
 
 <p class="bold-text"> 2. 어떤 폴더에서든 우클릭으로 cygwin 열기 세팅 <p>
