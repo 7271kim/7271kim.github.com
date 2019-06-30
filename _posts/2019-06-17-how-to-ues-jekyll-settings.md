@@ -6,6 +6,7 @@ categories:
     - gitBlog
 tags: 
     - difficulty-low: "난이도 하"
+    - eclipse: "이클립스"
 nex: "/gitblog/2019/06/22/how-to-ues-jekyll-grammer.html"
 author: 김석진
 thumbnail: posts/git-blog.jpg
@@ -78,5 +79,21 @@ thumbnail: posts/git-blog.jpg
 - <a href="http://localhost:4000/" target="_blank"> http://localhost:4000/</a> : 해당 로컬서버로 개발 환경 구축 가능
 - 배포는 쉽다.. 푸쉬하면 바로 각자의 블로그에 적용된다 ( https://7271kim.github.io )
 - 로컬에서 블로그 소스 확인 > Git에 푸쉬 > 개인블로그 적용.
+
+<br>
+### 5. 개인세팅 
+- 이클립스 IDE 사용 예정이라 필요 플러그인 세팅
+- FluentMark 1.2.0 설치 ( 이클립스 최신버전이라 이것밖에 없음 ㅠ )
+- 원하는 자동완성 세팅 
+<img src="/assets/img/posts/yaml/plugin.png" class="ratio-100">
+
+<pre>
+    Add 개인 세팅
+    &lt;a href="${cursor}" target="_blank">&lt;/a> 
+    &lt;br>
+    &lt;img src="${cursor}" class="ratio-100">
+    &lt;p class="bold-text">${cursor}&lt;/p>
+    &lt;pre>${cursor}&lt;/pre>
+</pre>
 
 <br/>
