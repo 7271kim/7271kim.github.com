@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /blog/categories/javascript
-title: JAVA
+title: javascript
 ---
  
 <h3> Posts by Category : {{ page.title }} </h3>
