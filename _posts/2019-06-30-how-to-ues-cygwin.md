@@ -22,5 +22,5 @@ thumbnail: posts/icon-cygwin.png
 
 <p class="bold-text"> 3. 윈도우 탐색기 > cygwin 우클릭 > 관리자 권한으로 실행 <p>
 - 해당 명령어 실행 : chere -i -t mintty -s bash<br/> 
-- 어떤 폴더에서든 " Bash Prompt Here " 열명 cygwin 실행 가능 <br/> 
+- 어떤 폴더에서든 " Bash Prompt Here " 클릭  cygwin 실행 가능 <br/> 
 - find . -name "*.png" 해당 명령어 실행해보기
