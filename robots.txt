@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://7271kim.github.io/sitemap.xml

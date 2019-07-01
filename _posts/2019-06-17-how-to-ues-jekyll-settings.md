@@ -94,6 +94,11 @@ thumbnail: posts/git-blog.jpg
     &lt;img src="${cursor}" class="ratio-100">
     &lt;p class="bold-text">${cursor}&lt;/p>
     &lt;pre>${cursor}&lt;/pre>
+    &lt;pre>
+    {% raw %}
+        ${cursor}
+    {% endraw %}
+    &lt;/pre>
 </pre>
 
 <br/>

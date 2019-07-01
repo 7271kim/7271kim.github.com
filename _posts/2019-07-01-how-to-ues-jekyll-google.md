@@ -47,6 +47,7 @@ Disallow: /hello/
  <br>
 <p class="bold-text"> ii) 일반 코드 삽입</p>
 <pre>
+{% raw %}
 ---
 ---
 &lt;?xml version="1.0" encoding="UTF-8"?>
@@ -67,11 +68,20 @@ Disallow: /hello/
     {% endif %}
     {% endfor %}
 &lt;/urlset>
+{% endraw %}
 </pre>
 
+<p class="bold-text">3.robots.txt 추가 </p>
+: sitemap 주소확인. 하단 내용 삽입
+<pre>
+User-agent: *
+Allow: /
+
+Sitemap: https://7271kim.github.io/sitemap.xml
+</pre>
 <p class="bold-text">3. 구글 등록</p>
 <a href="https://search.google.com/search-console/about?hl=ko&utm_source=wmx&utm_medium=wmx-welcome" target="_blank"> 구글등록 </a> 
-
+ - URL 접두어 입력 > 소유권 확인 : HTML태그 중 사이트 안 메타태그추가 진행
 
 	
 	
