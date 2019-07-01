@@ -26,7 +26,7 @@ thumbnail: posts/git-blog.jpg
 ### 2. 개발을 위한 로컬 환경 세팅.
 - 루비 버전 2.2.5 또는 그 이상.
 - <a href="https://rubyinstaller.org/" target="_blank">https://rubyinstaller.org/</a> 다운로드 및 설치
-- git 명령어를 위해 git 설치 위치인 git/bin 환경 변수 세팅 <br>
+- git 명령어를 위해 git 설치 위치인 git/bin 환경 변수 세팅 <br/>
 ( 필자의 경우 git 위치가 C:\Program Files\Git\bin 여서 내 PC 우클릭 > 고급 시스템 설정 > 환경변수 > 시스템변수의 path에 해당경로 추가 , 이제 cmd창에 git --version 으로 git 명령어 사용 가능 확인.  )
  
 <br/>
@@ -80,7 +80,7 @@ thumbnail: posts/git-blog.jpg
 - 배포는 쉽다.. 푸쉬하면 바로 각자의 블로그에 적용된다 ( https://7271kim.github.io )
 - 로컬에서 블로그 소스 확인 > Git에 푸쉬 > 개인블로그 적용.
 
-<br>
+<br/>
 ### 5. 개인세팅 
 - 이클립스 IDE 사용 예정이라 필요 플러그인 세팅
 - FluentMark 1.2.0 설치 ( 이클립스 최신버전이라 이것밖에 없음 ㅠ )

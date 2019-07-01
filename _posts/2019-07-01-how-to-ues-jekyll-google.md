@@ -12,7 +12,7 @@ author: 김석진
 thumbnail: posts/git-blog.jpg
 ---
 ######  구글 검색에 노출하기위해 필요한 것은 sitemap.xml과 robots.txt이다.
-<br>
+<br/>
 <p class="bold-text">sitemap.xml</p>
  - sitemap.xml은 웹사이트 내 모든 페이지의 목록을 나열한 파일로 책의 목차와 같은 역할
  - robots.txt 파일과는 달리 sitemap.xml 파일은 꼭 루트 디렉토리에 위치하지 않아도 된다.
@@ -44,7 +44,7 @@ Disallow: /hello/
  - Gemfile파일에 작성 : gem "jekyll-sitemap" , 그리고 bundle install
  - _config.yml plugins에 추가 jekyll-sitemap
  - 서버 재부팅 후 이제 블로그 URL에 /sitemap.xml를 붙여 잘 열리는지 확인
- <br>
+ <br/>
 <p class="bold-text"> ii) 일반 코드 삽입</p>
 <pre>
 {% raw %}
@@ -82,6 +82,7 @@ Sitemap: https://7271kim.github.io/sitemap.xml
 <p class="bold-text">3. 구글 등록</p>
 <a href="https://search.google.com/search-console/about?hl=ko&utm_source=wmx&utm_medium=wmx-welcome" target="_blank"> 구글등록 </a> 
  - URL 접두어 입력 > 소유권 확인 : HTML태그 중 사이트 안 메타태그추가 진행
+ - 색인 > Sitemaps > sitemap.xml 위치 적용
 
 	
 	
