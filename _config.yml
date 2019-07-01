@@ -53,6 +53,7 @@ defaults:
 # jekyll-paginate-v2 는  GitHub Pages 에서는 이 플러그인을 지원하지 않는다.
 plugins:
   - jekyll-paginate # 플러그인 사용을 의미한다.(Jekyll 3)
+  - jekyll-sitemap # sitemap 생성 플러그인
     # pagination settings
 paginate: 6 # 한 페이지당 보여줄 posts 수
     # :num은 페이지마다 번호를 각각 부여한다.

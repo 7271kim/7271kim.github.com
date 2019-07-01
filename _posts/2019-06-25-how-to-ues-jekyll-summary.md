@@ -8,6 +8,7 @@ tags:
     - difficulty-low: "난이도 하"
     - summary: "요약"
 pre: "/gitblog/2019/06/23/how-to-ues-jekyll-apply.html"
+nex: "/gitblog/2019/07/01/how-to-ues-jekyll-google.html"
 author: 김석진
 thumbnail: posts/git-blog.jpg
 ---
