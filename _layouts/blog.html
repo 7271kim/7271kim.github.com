@@ -11,10 +11,10 @@ layout: default
                     
                     <div class="card blog-post col-md-4 col-sm-6 col-xs-12 no-margin">
                         <a href="{{ post.url | prepend: site.baseurl }}">
-                            <img class="card-img-top" src="/assets/img/{{ post.thumbnail }}" alt="{{ post.title }}">
+                            <img class="card-img-top" src="/assets/img/{{ post.thumbnail }}" alt="{{ post.title }}" />
                         </a>
                         <div class="card-body center">
-                            <img src="/assets/img/{{ site.author_logo }}" class="author-profile-img bottom-margin">
+                            <img src="/assets/img/{{ site.author_logo }}" class="author-profile-img bottom-margin" />
                             <h4 class="card-title">{{ post.title }}</h4>
                             <h6 class="card-subtitle mb-2 text-muted">{{ post.date | date: "%Y-%m-%d" }}</h6>
                             <p class="card-text">{{ post.summary }} </p>
@@ -74,11 +74,11 @@ layout: default
                              {% assign tagUrl = category[0] %}
                              {% assign tagName = category[1] %}
                               <div id="#{{ tagName | slugize }}"></div>
-			                  <!-- slugize: 소문자화 -->
-			                  <li class="tag-head">
-			                      <a href="{{ site.baseurl }}/blog/tags/{{ tagUrl }}"> #{{ tagName }} ( {{ postList | size }} ) </a>
-			                  </li>
-			                  <a name="{{ tagName | slugize }}"></a>
+                              <!-- slugize: 소문자화 -->
+                              <li class="tag-head">
+                                  <a href="{{ site.baseurl }}/blog/tags/{{ tagUrl }}"> #{{ tagName }} ( {{ postList | size }} ) </a>
+                              </li>
+                              <a name="{{ tagName | slugize }}"></a>
                         {% endfor %}
                      {% endfor %}
                 </div>
