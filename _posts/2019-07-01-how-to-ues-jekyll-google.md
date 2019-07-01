@@ -83,6 +83,7 @@ Sitemap: https://7271kim.github.io/sitemap.xml
 <a href="https://search.google.com/search-console/about?hl=ko&utm_source=wmx&utm_medium=wmx-welcome" target="_blank"> 구글등록 </a> 
  - URL 접두어 입력 > 소유권 확인 : HTML태그 중 사이트 안 메타태그추가 진행
  - 색인 > Sitemaps > sitemap.xml 위치 적용
+ - 일주일정도 반영 기다리기
 
 	
 	
