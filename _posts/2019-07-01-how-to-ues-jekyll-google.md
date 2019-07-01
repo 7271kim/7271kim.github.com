@@ -37,7 +37,8 @@ Disallow: /hello/
 </pre>
 
 #### 실제 적용
-<p class="bold-text">1. root에 sitemap.xml 생성</p>
+<p class="bold-text">1. _config.yml url에 자신의 홈페이지 주소 확인</p>
+<p class="bold-text">2. root에 sitemap.xml 생성</p>
 <p class="bold-text"> i) jekyll-sitemap plugin을 사용</p>
  - 플러그인 설치 gem install jekyll-sitemap
  - Gemfile파일에 작성 : gem "jekyll-sitemap" , 그리고 bundle install
@@ -68,7 +69,6 @@ Disallow: /hello/
 &lt;/urlset>
 </pre>
 
-<p class="bold-text">2. _config.yml url에 자신의 홈페이지 주소 확인</p>
 <p class="bold-text">3. 구글 등록</p>
 <a href="https://search.google.com/search-console/about?hl=ko&utm_source=wmx&utm_medium=wmx-welcome" target="_blank"> 구글등록 </a> 
 
