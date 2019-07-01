@@ -37,7 +37,7 @@ Disallow: /hello/
 </pre>
 
 #### 실제 적용
-<p class="bold-text">1. _config.yml url에 자신의 홈페이지 주소 확인</p>
+<p class="bold-text">1. _config.yml url에 자신의 홈페이지 주소 확인 : 꼭!!! http:// 까지 풀로 적어줘야가능하다.! ( 그래야 플러그인 생성시 앞에 붙음 )</p>
 <p class="bold-text">2. root에 sitemap.xml 생성</p>
 <p class="bold-text"> i) jekyll-sitemap plugin을 사용</p>
  - 플러그인 설치 gem install jekyll-sitemap
