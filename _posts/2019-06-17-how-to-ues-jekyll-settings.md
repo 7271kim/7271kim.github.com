@@ -95,9 +95,9 @@ thumbnail: posts/git-blog.jpg
     &lt;p class="bold-text">${cursor}&lt;/p>
     &lt;pre>${cursor}&lt;/pre>
     &lt;pre>
-    {% raw %}
+    &#123;% raw %}
         ${cursor}
-    {% endraw %}
+    &#123;% endraw %}
     &lt;/pre>
 </pre>
 
