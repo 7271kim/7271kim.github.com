@@ -99,6 +99,7 @@ thumbnail: posts/git-blog.jpg
         ${cursor}
     &#123;% endraw %}
     &lt;/pre>
+    &lt;p class="text-danger">${cursor}</p>
 </pre>
 
 <br/>
