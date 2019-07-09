@@ -1,4 +1,4 @@
-title: 열공하는 개발자
+title: 기록하는 개발자
 subtitle: STUDY Kim Seok Jin
 description: 
  Word 대신 이제는 Git 블로그를 시작해보자
@@ -15,6 +15,7 @@ header_pages:
 categories_korea: 
  - "gitBlog": "깃 블로그"
  - "algorithm": "알고리즘"
+ - "travel": "여행"
 author_logo: profile.png
 disqus_shortname: KIM SEOKJIN
 author: 김석진
