@@ -14,7 +14,32 @@ thumbnail: posts/icon-travel.png
 <p>09:30 : 출국심사 완료</p>
 <p class="text-danger">오사카 간사이 공항 -> 교토 : 하루카(HARUKA) 특급 열차 한국에서 구매 <br/> ( 바우처 아닌 실물 티켓 택배로 받아 현지에서 시간 아끼기 )</p>
 <p>10:16 : 2층 JR간사이 공항역 연결통로를 따라 이동 하루카(HARUKA) 열차를 탑승 - JR노선이라 왼쪽 파랑이라인 입장( 자유석 4-6번 차량 탑승구쪽 ) ( <a href="http://time.jr-odekake.net/cgi-bin/mydia.cgi?MODE=11&FUNC=0&EKI=Kansai-airport&SENK=&DIR=&DDIV=&CDAY=&DITD=&DATE=20190713&COMPANY_CODE=401&COUNTRY_CODE=en&INBOUND_CODE=7&yearmonth=201907&day=13&x=60&y=4" target="_blank">13일 시간표</a> )</p>
-<p>11:30 :  <a href="https://goo.gl/maps/wEuNDVrJaJDevKS58" target="_blank">교토역</a> 도착</p>
+<p>11:30 : <a href="https://goo.gl/maps/wEuNDVrJaJDevKS58" target="_blank">교토역</a> 도착</p>
+<p style="text-decoration:line-through;font-size: 10px;">12:00 : 교토역 지하 1층 <a href="https://handsfree-japan.com/ko/access/" target="_blank">짐보관소 Crosta</a>도착 하루 700엔 </p>
+<p>12:00 : 교토역 2층 관광안내소( kyoto tourist infomation center확인 ) - 교토 버스 ( 600엔 )</p>
+<p class="bold-text" style="text-decoration:line-through;font-size: 10px;">13:00 : 점심!! </p>
+ - <a href="https://goo.gl/maps/Uy2sfjZECvsRBNmV8" target="_blank" style="text-decoration:line-through;font-size: 10px;"> Machiya (오꼬노미야끼):  교토역 B8구역 가운데에 존재</a> 
+<p style="text-decoration:line-through;font-size: 10px;">13:00 : 교토역 => 아라시야마 : 28번 버스 C6 or D3구역 <a href="https://m.blog.naver.com/seyou5023/221321472010" target="_blank">탑승</a></p>
+<p>13:00 : 교토역 ( A2정류장 4,5,17,104,205번 버스 탑승 ) > 가와라마치역 > 숙소 짐 맡기기 ( <a href="https://www2.city.kyoto.lg.jp/kotsu/webguide/ko/comm/routemap.html" target="_blank">교토 내 버스 노선도</a> )</p>
+<p class="bold-text">14:30 : 다시 가와라마치역온 후  점심!!</p>
+ - 뭐먹지
+<p>15:15 : 가와라마치역(한큐 교토선 > 우메다 방면) > 가쓰라역( 한큐 아라시야마선 환승) ><a href="https://goo.gl/maps/RAjNSF6SgfG87n5A9" target="_blank">아라시야마역 도착 (220엔)</a></p>
+<p class="bold-text text-danger">19:00 : 아라시야마일정 >> 도케츠쿄우(다리) > 덴류지(갈지말지 확인 - 안가는 쪽으로) > 대나무숲(치쿠린) > 노노미야 신사 > 호린지 
+>> 아라시야마역 </p>
+ - 기요미즈데라 폐관 ( 18:30 ) 됨
+ - 블루보틀 영업종료 ( 18:00 ) 됨
+<p>19:30 : 숙소 체크인 및 휴삭</p>
+<p class="bold-text">20:00 : 저녁먹으러 출발~</p>
+ - 뭐먹지
+<p>24:00 : 저녁 먹고은 후  기온거리( 니시키 시장 ) 탐방 및 숙소에서 하루 마무리</p>
+
+
+<!--
+아라샤아 > 기요미즈데라 > 블루보틀 > 야사키 신사 > 숙소 > 기온거리 
+
+
+
+
 
 <p class="bold-text">오사카 -> 교토가기</p>
 <p>JR / 한큐 / 케이한 3개 노선  <a href="https://uh.dcmys.kr/701" target="_blank">https://uh.dcmys.kr/701</a> </p>
@@ -29,9 +54,20 @@ thumbnail: posts/icon-travel.png
 
 <a href="https://maps.app.goo.gl/h8abA2UkoY3wonLR8" target="_blank">쿄우 노 야도 카기헤이 (Kyou no Yado Kagihei Hotel)</a> 
 <p> 숙소주소 :481 Umeya-cho,Fuyacho Nishiki agaru Nakagyo-ku 교토 일본 604-8057 </p>
+체크인 시간: 16:00부터 - 10시 
 https://goo.gl/maps/UJha3YicRN1NT6AD6
 
 교토 버스 패스권 : 1일치 3번 이상 탈 경우 이득  - 500엔
+엣지 더 하루카스 ( 아베노 하루카스 )
+오사카 마구로 쇼쿠도( 먹거리 )
+아마노 하시다테 3대 절경
+오꼬노미야끼
+https://m.post.naver.com/viewer/postView.nhn?volumeNo=12015395&memberNo=24269379
+기요미즈데라 
+블루보틀 
+스시 우동
+1. 유심
+2. 숙소-->
 
 
 <script async type="text/javascript">
