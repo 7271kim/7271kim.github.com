@@ -21,6 +21,12 @@ thumbnail: posts/icon-travel.png
  - <a href="https://goo.gl/maps/Uy2sfjZECvsRBNmV8" target="_blank" style="text-decoration:line-through;font-size: 10px;"> Machiya (오꼬노미야끼):  교토역 B8구역 가운데에 존재</a> 
 <p style="text-decoration:line-through;font-size: 10px;">13:00 : 교토역 => 아라시야마 : 28번 버스 C6 or D3구역 <a href="https://m.blog.naver.com/seyou5023/221321472010" target="_blank">탑승</a></p>
 <p>13:00 : 교토역 ( A2정류장 4,5,17,104,205번 버스 탑승 ) > 가와라마치역 > 숙소 짐 맡기기 ( <a href="https://www2.city.kyoto.lg.jp/kotsu/webguide/ko/comm/routemap.html" target="_blank">교토 내 버스 노선도</a> )</p>
+<pre>
+<a href="https://maps.app.goo.gl/h8abA2UkoY3wonLR8" target="_blank">쿄우 노 야도 카기헤이 (Kyou no Yado Kagihei Hotel)</a>
+숙소주소 :481 Umeya-cho,Fuyacho Nishiki agaru Nakagyo-ku 교토 일본 604-8057
+체크인 시간: 16:00부터 - 10시
+</pre>
+ 
 <p class="bold-text">14:30 : 다시 가와라마치역온 후  점심!!</p>
  - 뭐먹지
 <p>15:15 : 가와라마치역(한큐 교토선 > 우메다 방면) > 가쓰라역( 한큐 아라시야마선 환승) ><a href="https://goo.gl/maps/RAjNSF6SgfG87n5A9" target="_blank">아라시야마역 도착 (220엔)</a></p>
