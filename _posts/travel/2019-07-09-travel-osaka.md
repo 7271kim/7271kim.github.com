@@ -7,6 +7,7 @@ categories:
 thumbnail: posts/icon-travel.png
 ---
 #### 2019.07.13 - 16 오사카 여행 계획
+#### 일본 로손에서 모찌리 롤케익, 치킨 + 맥주가 진리 
 <br/>
 <p class="text-danger bold-text" style="font-size:20px">2019.07.13일 (토) ( <span id="days"></span>일 <span id="hour"></span>시간 <span id="minute"></span>분 <span id="second"></span>초 )</p> 
 <p>07:10 : 비행기 출발</p>
