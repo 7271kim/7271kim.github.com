@@ -43,7 +43,7 @@ nex: ""
 
 <p class="bold-text">4.페이즈와 플러그인 그리고 goal실행</p>
  - mvn의 모든 기능은 플러그인이 실행시킴.
- - mvn compile => compile 페이즈와 연결되어 있는 compiler 플러그인(maven-compiler-plugin)의 compile 골이 실행
+ - <span class="bold-text text-danger">mvn compile 이라는 명령어 실행 => compile 페이즈와 연결되어 있는 compiler 플러그인(maven-compiler-plugin)의 compile 골이 실행</span>
  - <a href="http://maven.apache.org/plugins/index.html" target="_blank">메이븐 플러그인 검색 및 사용법</a>
 
 
