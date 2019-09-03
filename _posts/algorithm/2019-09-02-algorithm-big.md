@@ -47,4 +47,9 @@ System.out.println(sum); //62719325561530825701802597320166289002247797902527770
 sum = sum.divide( new BigDecimal("121") , 5 , BigDecimal.ROUND_HALF_DOWN);
 System.out.println(sum); //5183415335663704603454760109104651983656842801861799231.91519
 
+5. 비교 
+a.compareTo(b);
+=> 1 : a > b
+=> 0 : a = b
+=> -1 : a < b 
 </pre>
