@@ -60,4 +60,5 @@ defaults:
 </pre>
 - scope, values는 기본이다 해당 문법을 번역하면  모든 패스, default 레이아웃을 사용하는 곳의 lang 변수의 값은 ko다 
 
-
+#### 4. 해당 git 사용시 >> import >>  import as general project
+##### 5. 이클립스 초기 세팅 : https://7271kim.github.io/gitblog/2019/06/17/how-to-ues-jekyll-settings.html >> 개인세팅 참고
