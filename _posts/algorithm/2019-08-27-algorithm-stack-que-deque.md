@@ -16,62 +16,62 @@ nex: ""
  - 위로 쌓아 간다.
  - 중간을 볼 수 없다. 위에서부터 찾아야 한다.
 <pre>
-push 1 >> O(1)
+push 1
 1
 
-push 2 >> O(1)
+push 2
 2
 1
 
-push 3 >> O(1)
+push 3
 3
 2
 1
 
-pop() >> 위에 있는 것 제거 >> O(1)
+pop() >> 위에 있는 것 제거 
 2
 1
 
-peak() >> 맨 위에있는 것 출력 2 >> O(1)
+peak() >> 맨 위에있는 것 출력 2
 2
 1
 
-empty - > O(1)
-size -> O(1) or O(n)
+empty
+size
 </pre>
 
 <p class="bold-text">2. Que란</p>
  - 선입 선출 FIFO
  - 아래로 쌓아간다.
 <pre>
-add 1 >> O(1)
+add 1 
 1
 
-add 2 >> O(1)
+add 2
 1
 2
 
-add 3 >> O(1)
+add 3
 1
 2
 3
 
-poll() >> 위에 있는 것 제거 >> O(1)
+poll()
 2
 3
 
-peak() >> 맨 위에있는 것 출력 2 >> O(1)
+peak()
 2
 3
 
-empty - > O(N)
-size -> O(n)
+empty 
+size
 
 queue.add(queue.poll());
 Que의 순회 
 </pre>
 
-<p class="bold-text">3. Deqye란</p>
+<p class="bold-text">3. Deque란</p>
  - 양쪽 모두 입력과 출력이 가능
 <pre>
 addFirst 1 (맨 위에 넣기) >> O(1)

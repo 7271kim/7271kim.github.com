@@ -17,7 +17,7 @@ nex: ""
  - Queue란 먼저 들어온 데이터를 먼저 내보내는 선입선출(FIFO)을 표현하기 위한 자료구조
  - 예를들어 프린트나 테이블 예약 같은경우 먼저 예약한 사람이 우선일 때 필요한 자료구조이다. 
  - 연결리스트 혹은 배열로 구현 가능하다. (Java Utile 패키지가 제공하는것 사용해도 됨)
- - 기본으로 필요한 로직은  데이터 넣기(add()), 데이터 빼기(remove()), 가장 위에것 확인하기(peek()), 비어있는지 확인하기(isEmpty())
+ - 기본으로 필요한 로직은  데이터 넣기(add()), 데이터 빼기(poll()), 가장 위에것 확인하기(peek()), 비어있는지 확인하기(isEmpty())
 
 <p class="bold-text">연결 리스트로 구현하기</p>
 <pre>
@@ -42,7 +42,7 @@ public class MyQueueLinked {
         tail = null;
     }
     
-    //remove(),  add() , peek() , isEmpty() 4가지의 함수 구현
+    //poll(),  add() , peek() , isEmpty() 4가지의 함수 구현
     public void add( Object item ) {
        // 새로운 노드를 만들고 기존 tail을 해당으로 교체하면서 기존 tail.link를 신규 노드로 변경
        // 첫 진입 시 top이랑 테일은 같다.
@@ -57,7 +57,7 @@ public class MyQueueLinked {
        }
     }
     
-    public Object remove() {
+    public Object poll() {
         // top을 탑에 연결된 link로 바꿔주고 top데이터 가지고 오기
         // 시간 복잡도 O(1)
         if(isEmpty()) {
@@ -95,7 +95,7 @@ test.add("dd");
 test.add("ee");
 
 while(!test.isEmpty()) {
-    System.out.println(test.remove());
+    System.out.println(test.poll());
 }
 {% endraw %}
 </pre>
@@ -116,14 +116,14 @@ public class MyQueueArray {
         this.maxSize = size;
         this.stackArray = new Object[size];
     }
-    //remove(),  add() , peek() , isEmpty() 4가지의 함수 구현
+    //poll(),  add() , peek() , isEmpty() 4가지의 함수 구현
     public void add( Object item ) {
        //시간 복잡도 O(1)
        if(tail >= maxSize-1) throw new ArrayIndexOutOfBoundsException();
        stackArray[++tail] = item;
     }
     
-    public Object remove() {
+    public Object poll() {
         // top을 바꿔주고 top 데이터를 가지고옴
         //시간 복잡도 O(1)
         if(isEmpty()) {
@@ -164,7 +164,7 @@ test2.add("dd");
 test2.add("ee");
 
 while(!test2.isEmpty()) {
-    System.out.println(test2.remove());
+    System.out.println(test2.poll());
     
 }
 {% endraw %}
