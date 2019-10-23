@@ -5,7 +5,7 @@ summary: Stack
 categories: 
     - dataStructure
     - JAVA
-thumbnail: posts/icon-algorithm.png
+thumbnail: posts/icon-data-structure.png
 nex: ""
 ---
 ### 1. 자료구조 : Stack편
