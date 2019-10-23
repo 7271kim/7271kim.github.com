@@ -5,8 +5,14 @@ body {
 .bold-text{
     font-weight: bold;
 }
+.img-center{
+    text-align : center;
+}
 .ratio-100 {
     width:100%;
+}
+.max-ratio-100 {
+    max-width:100%;
 }
 header {
     background-color: #F5F5F5;

@@ -16,6 +16,7 @@ categories_korea:
  - "gitBlog": "깃 블로그"
  - "algorithm": "알고리즘"
  - "travel": "여행"
+ - "dataStructure" : "자료구조"
 author_logo: profile.png
 disqus_shortname: KIM SEOKJIN
 author: 김석진
