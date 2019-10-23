@@ -5,6 +5,7 @@ summary: 호치민 여행계획편
 categories: 
     - travel
 thumbnail: posts/icon-travel.png
+published : false
 ---
 
 
