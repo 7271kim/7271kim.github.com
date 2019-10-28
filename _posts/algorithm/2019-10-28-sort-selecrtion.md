@@ -23,6 +23,7 @@ nex: ""
    
 <p class="bold-text"> iii) 단점 </p>
  - 느리다
+
 <p class="bold-text"> vi) 시간복잡도</p>
 : O(n^2) 
 
