@@ -8,8 +8,8 @@ categories:
 tags: 
    - difficulty-low: "난이도 중"
 thumbnail: posts/icon-algorithm.png
-pre: ""
-nex: ""
+pre: "/algorithm/java/2019/08/27/algorithm-stack-que-deque.html"
+nex: "/algorithm/java/2019/10/28/sort-1-selecrtion.html"
 ---
 <p class="bold-text">1. BigDecimal 이란</p>
  - 정확한 숫자(실수)계산을 위해 설계된 클래스 

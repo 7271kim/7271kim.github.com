@@ -8,8 +8,8 @@ categories:
 tags: 
    - difficulty-low: "난이도 중"
 thumbnail: posts/icon-algorithm.png
-pre: ""
-nex: ""
+pre: "/algorithm/java/2019/09/04/algorithm-6.html"
+nex: "/algorithm/java/2019/08/27/algorithm-stack-que-deque.html"
 ---
 <p class="bold-text">Tree란</p>
  - 개인적인 정의는 특정 요구를 빠르게 검색하기 위해 짜놓은 데이터 구조.

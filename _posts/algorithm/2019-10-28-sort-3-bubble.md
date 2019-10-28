@@ -8,7 +8,7 @@ categories:
 tags: 
    - difficulty-low: "난이도 중"
 thumbnail: posts/icon-algorithm.png
-pre: ""
+pre: "/algorithm/java/2019/10/28/sort-2-insertion.html"
 nex: ""
 ---
 ### 3. 정렬 : 버블정렬편

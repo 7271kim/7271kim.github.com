@@ -6,7 +6,8 @@ categories:
     - dataStructure
     - JAVA
 thumbnail: posts/icon-data-structure.png
-nex: ""
+pre: "/datastructure/java/2019/10/26/data-structure-heap.html"
+nex: "/datastructure/java/2019/10/28/data-structure-graph.html"
 ---
 ### 4. 자료구조 : Tree편
 

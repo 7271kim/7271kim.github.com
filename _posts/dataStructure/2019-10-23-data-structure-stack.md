@@ -6,7 +6,7 @@ categories:
     - dataStructure
     - JAVA
 thumbnail: posts/icon-data-structure.png
-nex: ""
+nex: "/datastructure/java/2019/10/23/data-structure-queue.html"
 ---
 ### 1. 자료구조 : Stack편
 

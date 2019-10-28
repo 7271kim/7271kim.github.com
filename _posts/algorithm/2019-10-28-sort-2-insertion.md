@@ -8,8 +8,8 @@ categories:
 tags: 
    - difficulty-low: "난이도 중"
 thumbnail: posts/icon-algorithm.png
-pre: ""
-nex: ""
+pre: "/algorithm/java/2019/10/28/sort-1-selecrtion.html"
+nex: "/algorithm/java/2019/10/28/sort-3-bubble.html"
 ---
 ### 2. 정렬 : 삽입정렬편
 
