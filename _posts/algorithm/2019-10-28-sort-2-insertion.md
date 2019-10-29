@@ -31,9 +31,9 @@ nex: "/algorithm/java/2019/10/28/sort-3-bubble.html"
 
 <pre>
 class InsertionSort {
-    int [] data; 
+    private int [] data; 
    
-    InsertionSort( int[] data ){
+    public InsertionSort( int[] data ){
         this.data = data;
     }
     // 오름차순 정렬 1 2 3 4 5

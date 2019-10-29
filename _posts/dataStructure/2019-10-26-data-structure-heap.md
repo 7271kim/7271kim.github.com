@@ -101,32 +101,38 @@ public class MyHeapArray {
         heap[1]         = lastChild;
         heap[pointer--] = 0;
         
-        // 자식들 비교확인 로직 자식들 노드 중 값이 더 큰 노드와 교체한다.
+        // 자식이 존재하는지 확인 후  자식과 부모 비교 노드 중 값이 더 큰 노드와 교체한다.
         int tempIndex   = 1;
-        while( tempIndex &lt; pointer ) {
-            if( tempIndex*2 >= maxSize ) break; 
+        while( tempIndex*2 &lt;= pointer ) {
+            Boolean hasRightChild = tempIndex*2+1 &lt;= pointer;
             int leftChild  = heap[tempIndex*2];
             int rightChild = heap[tempIndex*2+1];
-            int tempValue;
+            int parent     = heap[tempIndex];
             int changeValue;
             int changeIndex;
             
-            // 자식들보다 크다면 break;
-            if( leftChild &lt; lastChild && rightChild &lt; lastChild ) {
-                break;
-            }
-            // 둘 다 큰경우 큰 자식이랑 변경로직
-            if( leftChild >= lastChild && rightChild >= lastChild ) {
-                changeValue = leftChild > rightChild ? leftChild : rightChild;
-                changeIndex = leftChild > rightChild ? tempIndex*2 : tempIndex*2+1;
+            if( !hasRightChild ) {
+                //우측값이 없는 경우 좌측만 비교하기
+                
+                // 부모가 큰 경우 더이상 필요없음
+                if( parent > leftChild ) break;
+                
+                // 변경값들 설정
+                changeIndex = tempIndex*2;
+                changeValue = leftChild;
             } else {
-                // 각각 변경 여기 들어온거면 왼쪽 오른쪽 자식중 비교값이랑 하나만 큰 경우다.
-                changeValue = leftChild >= lastChild ? leftChild : rightChild;
-                changeIndex = leftChild >= lastChild ? tempIndex*2 : tempIndex*2+1;
+                // 둘 다 큰경우는 더이상 하는 의미가 없음 
+                if( parent > leftChild && parent > rightChild ) break;
+                
+                // 둘중 더 큰값을 부모와 변경
+                changeValue = leftChild &lt; rightChild ? rightChild : leftChild;
+                changeIndex = leftChild &lt; rightChild ? tempIndex*2+1 : tempIndex*2;
+                
             }
-            tempValue = changeValue;
-            heap[changeIndex] = lastChild;
-            heap[tempIndex] = tempValue;
+            
+            //교체
+            heap[tempIndex]    = changeValue;
+            heap[changeIndex]  = parent;
             tempIndex = changeIndex;
         }
         
@@ -143,39 +149,38 @@ public class MyHeapArray {
         heap[1]         = lastChild;
         heap[pointer--] = 0;
         
-        // 자식들 비교확인 로직 자식들 노드 중 값이 더 큰 노드와 교체한다.
+        // 자식이 존재하는지 확인 후  자식과 부모 비교 노드 중 값이 더 큰 노드와 교체한다.
         int tempIndex   = 1;
-        while( tempIndex &lt; pointer ) {
-            if( tempIndex*2 > pointer ) break; 
-            
+        while( tempIndex*2 &lt;= pointer ) {
+            Boolean hasRightChild = tempIndex*2+1 &lt;= pointer;
             int leftChild  = heap[tempIndex*2];
             int rightChild = heap[tempIndex*2+1];
-            int tempValue;
+            int parent     = heap[tempIndex];
             int changeValue;
             int changeIndex;
             
-            // 자식들보다 작다면 break;
-            if( leftChild > lastChild && rightChild > lastChild ) {
-                break;
+            if( !hasRightChild ) {
+                //우측값이 없는 경우 좌측만 비교하기
+                
+                // 부모가 작은 경우 더이상 필요없음
+                if( parent &lt; leftChild ) break;
+                
+                // 변경값들 설정
+                changeIndex = tempIndex*2;
+                changeValue = leftChild;
+            } else {
+                // 부모가 왼쪽과 오른쪽보다 작은경우 더이상 필요없음 
+                if( parent &lt; leftChild && parent &lt; rightChild ) break;
+                
+                // 둘중 더 작은값을 부모와 변경
+                changeValue = leftChild > rightChild ? rightChild : leftChild;
+                changeIndex = leftChild > rightChild ? tempIndex*2+1 : tempIndex*2;
+                
             }
             
-            // 둘 작은 경우 작은 자식이랑 변경로직
-            if( tempIndex*2+1 > pointer ) {
-             // Min의 문제는 pointer가 벗어난 오른쪽 값이 0이기 때문에 문제가 발생
-             // 이때는 왼쪽과 비교해줘야 한다.
-                changeValue = leftChild &lt;= lastChild ? leftChild : lastChild;
-                changeIndex = tempIndex*2;
-            } else if( leftChild &lt;= lastChild && rightChild &lt;= lastChild ) {
-                changeValue = leftChild &lt; rightChild ? leftChild : rightChild;
-                changeIndex = leftChild &lt; rightChild ? tempIndex*2 : tempIndex*2+1;
-            } else {
-                // 각각 변경 여기 들어온거면 왼쪽 오른쪽 자식중 비교값이랑 하나만 작은 경우다.
-                changeValue = leftChild &lt;= lastChild ? leftChild : rightChild;
-                changeIndex = leftChild &lt;= lastChild ? tempIndex*2 : tempIndex*2+1;
-            }
-            tempValue = changeValue;
-            heap[changeIndex] = lastChild;
-            heap[tempIndex] = tempValue;
+            //교체
+            heap[tempIndex]    = changeValue;
+            heap[changeIndex]  = parent;
             tempIndex = changeIndex;
         }
         
@@ -198,6 +203,7 @@ public class MyHeapArray {
         }
         System.out.println(temp.toString());
     }
+    
 }
 
 ** 사용부 

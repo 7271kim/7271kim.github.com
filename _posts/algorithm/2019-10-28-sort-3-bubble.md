@@ -30,9 +30,9 @@ nex: "/algorithm/java/2019/10/29/sort-4-merge.html"
 
 <pre>
 class BubbleSort {
-    int [] data; 
+    private int [] data; 
    
-    BubbleSort( int[] data ){
+    public BubbleSort( int[] data ){
         this.data = data;
     }
     // 오름차순 정렬 1 2 3 4 5

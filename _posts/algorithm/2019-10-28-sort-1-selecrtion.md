@@ -29,9 +29,9 @@ nex: "/algorithm/java/2019/10/28/sort-2-insertion.html"
 
 <pre>
 class SelectionSort {
-    int [] data; 
+    private int [] data; 
    
-    SelectionSort( int[] data ){
+    public SelectionSort( int[] data ){
         this.data = data;
     }
     // 오름차순 정렬 1 2 3 4 5
