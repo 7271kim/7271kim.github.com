@@ -8,7 +8,7 @@ categories:
 tags: 
    - difficulty-low: "난이도 중"
 thumbnail: posts/icon-algorithm.png
-pre: "/algorithm/java/2019/10/30/search-1-bfs.html"
+pre: "/algorithm/java/2019/10/30/search-2-dfs.html"
 nex: ""
 ---
 ### 1. Spanning Tree란 (신장 트리)
