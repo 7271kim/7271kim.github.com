@@ -16,6 +16,8 @@ nex: "/algorithm/java/2019/09/02/algorithm-big.html"
  - 위로 쌓아 간다.
  - 중간을 볼 수 없다. 위에서부터 찾아야 한다.
 <pre>
+Stack&lt;Integer> stack = new Stack&lt;>();
+
 push 1
 1
 
@@ -44,6 +46,8 @@ size
  - 선입 선출 FIFO
  - 아래로 쌓아간다.
 <pre>
+Queue&lt;Integar> q = new LinkedList&lt;Integar>();
+
 add 1 
 1
 
@@ -74,6 +78,9 @@ Que의 순회
 <p class="bold-text">3. Deque란</p>
  - 양쪽 모두 입력과 출력이 가능
 <pre>
+ Deque&lt;Integar> test = new ArrayDeque&lt;Integar>();
+
+
 addFirst 1 (맨 위에 넣기) >> O(1)
 1
 
