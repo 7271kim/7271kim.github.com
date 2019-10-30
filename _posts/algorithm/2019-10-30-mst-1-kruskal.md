@@ -9,7 +9,7 @@ tags:
    - difficulty-low: "난이도 중"
 thumbnail: posts/icon-algorithm.png
 pre: "/algorithm/java/2019/10/30/search-2-dfs.html"
-nex: ""
+nex: "/algorithm/java/2019/10/30/mst-2-prim.html"
 ---
 ### 1. Spanning Tree란 (신장 트리)
  - 원래의 그래프에서 모든 노드를 포함하고
