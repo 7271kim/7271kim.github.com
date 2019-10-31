@@ -9,7 +9,7 @@ tags:
    - difficulty-low: "난이도 중"
 thumbnail: posts/icon-algorithm.png
 pre: "/algorithm/java/2019/10/30/mst-2-prim.html"
-nex: ""
+nex: "/algorithm/java/2019/10/31/slg-2-floyd.html"
 ---
 ### 1. 최단경로 알고리즘 : Dijkstra(다익스트라) 
  - 선에 가중치가 있는 그래프에서 1:N (해당경로에서 모든 노드까지) 최단거리를 구하는 알고리즘.
