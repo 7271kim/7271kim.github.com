@@ -7,7 +7,7 @@ categories:
     - JAVA
 thumbnail: posts/icon-data-structure.png
 pre: "/datastructure/java/2019/10/28/data-structure-tree.html"
-nex: ""
+nex: "/datastructure/java/2019/11/02/data-structure-trie.html"
 ---
 ### 5. 자료구조 : Graph편
 
