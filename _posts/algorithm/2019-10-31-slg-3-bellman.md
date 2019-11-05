@@ -8,8 +8,7 @@ categories:
 tags: 
    - difficulty-low: "난이도 중"
 thumbnail: posts/icon-algorithm.png
-pre: "/algorithm/java/2019/10/30/slg-1-Dijkstra"
-nex: ""
+pre: "/algorithm/java/2019/10/31/slg-2-floyd.html"
 ---
 ### 4. 최단경로 알고리즘 : Bellman Ford ( 벨만 포드 )
  - 다익스트라에서 한번더 진행하였을 때 음수 사이클 여부 판단 가능한 로직 추가 
