@@ -15,8 +15,8 @@ pre: "/algorithm/java/2019/11/05/math-1-permutation.html"
 
 <p class="bold-text">1. 동적 계획법을 응용한다. </p>
 - 정말 간단한 일반 공식 응용  : nCr = n-1Cr-1 + n-1Cr
-
 <pre>
+{% raw %}
 public class Combination {
     
     // 저장을 위한 공간
