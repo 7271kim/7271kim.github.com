@@ -8,7 +8,7 @@ categories:
 tags: 
    - difficulty-low: "난이도 중"
 thumbnail: posts/icon-algorithm.png
-nex: ""
+nex: "/algorithm/java/2019/11/07/math-2-combination.html"
 ---
 ### 1. 수학 : 순열편 
  - <a href="https://bcp0109.tistory.com/14" target="_blank">https://bcp0109.tistory.com/14</a>  해당 포스트를 참고하였습니다.
