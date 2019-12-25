@@ -15,8 +15,8 @@ cover: assets/images/blog-cover.jpg
 logo: assets/images/blog-icon.png
 logo_dark: assets/images/favicon.png
 favicon: assets/images/favicon.png
-production_url: https://jekyller.github.io/jasper2/
-source_url: https://github.com/jekyller/jasper2/
+production_url:  https://7271kim.github.io/jasper2/
+source_url:  https://github.com/7271kim/7271kim.github.com
 CNAME: #add cname for website to be created
 
 # Social info
@@ -74,8 +74,8 @@ repo: jasper2
 branch: master
 relative_source: ../jasper2/
 destination: ../jasper2-pages/
-production_url:  https://jekyller.github.io/jasper2/
-source_url:  https://github.com/jekyller/jasper2/
+production_url:  https://7271kim.github.io/jasper2/
+source_url:  https://github.com/7271kim/7271kim.github.com
 
 exclude:
   - assets/css
