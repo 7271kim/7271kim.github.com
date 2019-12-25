@@ -1,62 +1,96 @@
-title: 기록하는 개발자
-subtitle: STUDY Kim Seok Jin
-description: 
- Word 대신 이제는 Git 블로그를 시작해보자
-baseurl: "" 
-url: "http://7271kim.github.io"
- 
-# 상단 네비 우측영역에 노출될 페이지 설정
-header_pages: 
- - "index.md"
- - "categories/all.md"
- - "tags/all.md"
- 
- # url에 한글을 입력하게 하고 싶지않아 카테고리 한글 , 영문 분기
-categories_korea: 
- - "gitBlog": "깃 블로그"
- - "algorithm": "알고리즘"
- - "travel": "여행"
- - "dataStructure" : "자료구조"
-author_logo: profile.png
-disqus_shortname: KIM SEOKJIN
-author: 김석진
-author_bio: jekyll devlopr템플릿으로 Base setting 
-author_email: "7271kim@naver.com"
-author_location: Korea
-author_website_url: "tomcat.honbabzone.com/list.do"
+# Jekyll configuration
+markdown: kramdown
+highlighter: rouge
+paginate: 100 # it will paginate after this number
+language: 'en-uk'
+words_per_minute: 200
 
-# Main에 자기소개 란
-intros: 
- - "좋은 개발자가 되고 싶은 사람"
- 
-# Main 및 페이지에서 사용될 소셜 링크 계정 세팅
-#twitter_username: yourusername
-github_username: 7271kim
-#facebook_username: seokjin.kim.16
-#linkedin_username: yourusername
-#behance_username: yourusername
-instagram_username: kimseokjin_albert
-#medium_username: yourusername 
-#telegram_username: yourusername
-#dribbble_username: yourusername 
-#flickr_username: yourusername
+# edit baseurl to simply '/' if using as your personal page (instead of a project page)
+baseurl: /jasper2/
 
-# 한번 공부를 위해 세팅해봄
-defaults:
- -
-  scop:
-   path: "" # 이 빈 문자열은 프로젝트의 모든 파일을 의미함
-   # type: "posts" # 이전 Jekyll 2.2 에서는 `post`
-  values:
-   layout: "default" # 이제 type 이 posts 인 파일에만 레이아웃이 설정될 것입니다.
-   lang: "ko-KR" #모든 페이지 page.lang 을 가지게 됨
-   
-# 페이지 네비 세팅
-# jekyll-paginate-v2 는  GitHub Pages 에서는 이 플러그인을 지원하지 않는다.
-plugins:
-  - jekyll-paginate # 플러그인 사용을 의미한다.(Jekyll 3)
-  - jekyll-sitemap # sitemap 생성 플러그인
-    # pagination settings
-paginate: 6 # 한 페이지당 보여줄 posts 수
-    # :num은 페이지마다 번호를 각각 부여한다.
-paginate_path: "/page/:num" # 다음 페이지에 해당하는 URL
+# Website info
+title: Ghost
+description: The professional publishing platform
+cover: assets/images/blog-cover.jpg
+logo: assets/images/blog-icon.png
+logo_dark: assets/images/favicon.png
+favicon: assets/images/favicon.png
+production_url: https://jekyller.github.io/jasper2/
+source_url: https://github.com/jekyller/jasper2/
+CNAME: #add cname for website to be created
+
+# Social info
+navigation: True # show the navbar links
+subscribers: True # you need to connect an external service for this to work,
+# if 'True' the submit button is disabled for now, but you can change that
+# by editing `_includes/subscribe-form.html`
+twitter: tryghost # replace by your username
+facebook: ghost # replace by your username
+
+# Disqus
+disqus: False
+disqus_shortname: jekyller # replace with your disqus username
+
+# Google Analytics
+google_analytics: UA-69281367-1 # replace with your GA tracking identifier
+
+# Permalinks
+permalink: /:title
+# permalink: /author/:author
+# permalink: /tag/:tag
+
+# Authors' info in `_data/authors.yml`
+# Tags' info in `_data/tags_info.yml`
+
+# gems and other configs
+plugins_dir: [_plugins]
+plugins: [jekyll-paginate, jekyll-feed]
+
+feed:
+  path: feed.xml
+
+# Additional settings available on the front-matter
+# Site logo in the index.html (as in demo.ghost.io)
+# Author's page cover in _layouts/author.html
+# The same for page.html and tag.html layouts
+# Post's page cover as a per-post basis _posts/...
+# Disqus comments as a per-post basis
+# ...
+
+# Settings for builing master branch with travis-ci
+# with jekyll-travis
+
+# Settings for deploy rake task
+# Username and repo of Github repo, e.g.
+# https://github.com/USERNAME/REPO.git
+# username defaults to ENV['GIT_NAME'] used by Travis
+# repo defaults to USERNAME.github.io
+# Branch defaults to "source" for USERNAME.github.io
+# or "master" otherwise
+safe: False
+lsi: False
+username: jekyller
+repo: jasper2
+branch: master
+relative_source: ../jasper2/
+destination: ../jasper2-pages/
+production_url:  https://jekyller.github.io/jasper2/
+source_url:  https://github.com/jekyller/jasper2/
+
+exclude:
+  - assets/css
+  - node_modules
+  - vendor
+  - .travis.yml
+  - Gemfile
+  - Gemfile.lock
+  - GHOST.txt
+  - gulpfile.js
+  - LICENSE
+  - package.json
+  - Rakefile
+  - README.md
+  - script.py
+  - changelog.md
+  - "*.Rmd"
+  - .git*
