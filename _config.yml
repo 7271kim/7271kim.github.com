@@ -101,7 +101,7 @@ analytics:
 # Site Author
 author:
   name             : "김석진"
-  avatar           : "/assets/images/senior-couple-4723737_640.jpg" # 프로필 이미지
+  avatar           : "/assets/images/profile/poto.jpg" # 프로필 이미지
   bio              : "꿈을 포기하지 않고 꾸준히 노력하여 좋은 개발자가 되기 위한 블로그"
   location         : "Republic of Korea"
   email            : "7271kim@naver.com"
