@@ -9,7 +9,7 @@ title_separator          : "&#124;" # 타이틀 사이 구분자 <title>Welcome 
 subtitle                 : "Version 1.0" # 타이틀 아래에 나올 작은 글씨 
 name                     : "김석진" # 맨 하단 이름 찍히는 영역
 description              : "JAVA와 Spring Boot 혹은 Sever등 다양한 개발을 공부하는 블로그" # Meta 태그에 들어가는 영역 
-url                      : "https://7271kim.github.io/"# GitBlog 호스트 주소
+url                      : "www.honbabzone.com" # GitBlog 호스트 주소
 baseurl                  : # subPath https://7271kim.github.io/blog라고 하고 싶을 시 "/blog" 라고 적는다.
 repository               : "7271kim/7271kim.github.com" # GitHub username/repo-name  
 teaser                   : "/assets/images/senior-couple-4723737_640.jpg" # 홈페이지 기본 티져 이미지
@@ -102,7 +102,7 @@ analytics:
 author:
   name             : "김석진"
   avatar           : "/assets/images/profile/poto.jpg" # 프로필 이미지
-  bio              : "꿈을 포기하지 않고 꾸준히 노력하여 좋은 개발자가 되기 위한 블로그"
+  bio              : "하다보면 좋은 개발자가 되어있겠지"
   location         : "Republic of Korea"
   email            : "7271kim@naver.com"
   links:
