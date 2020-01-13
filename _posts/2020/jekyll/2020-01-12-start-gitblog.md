@@ -18,16 +18,16 @@ toc_label: 목차
 또한 GitBlog 새로운 테마를 세팅하면서 겪었던 어려움을 공유하고 누구나 바로 깃블로그에 자신의 글을 쉽게 올릴 수 있도록 글을 공유합니다.
 
 ## Step 1:  깃 블로그란
-깃 블로그란 쉽게 말해 Github저장소에 저장되어 있는 html파일 같은 정적 웹 문서들을 GitHub에서 무료로 웹에서 볼 수 있도록 호스팅 서비스를 제공해 주는 것입니다.
-때문에 Github을 이용하는 유저들은 **누구나 고유의 정적 웹 사이트 1개를 가질 수 있습니다.** 계정이 없다면 [github]({{ "https://github.com/" }}) 에서 Github계정 생성합니다.
+깃 블로그란 쉽게 말해 Git hub 저장소에 저장된 html 파일과 같은 정적 웹 문서들을 GitHub에서 무료로 웹에서 볼 수 있도록 호스팅 서비스를 제공해 주는 것입니다. 
+때문에 Github을 이용하는 사용자들은 **누구나 고유의 정적 웹 사이트 1개를 가질 수 있습니다.** 계정이 없다면 [Github]({{ "https://github.com/" }}) 에서 Github계정 생성합니다.
 이후 신규 Repository를 **{Git ID}.github.com** 으로 세팅합니다. 
 
-**Please Note:** 해당 포스트는 어느정도 깃의 사용법을 알고 있다는 가정하에 작성하였습니다.
+**Please Note:** 해당 포스트는 어느 정도 깃의 사용법을 알고 있다는 가정하에 작성하였습니다.
 {: .notice--danger}
 
 ![Git repository 신규 생성 이미지]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/create-repository.png){: .align-center}
 
-정상적으로 생성이 되었다면 세팅 메뉴 중 하단  GitHub Pages가 그림과 같이 활성화 되어있을 것입니다.
+정상적으로 생성되었다면 세팅 메뉴 중 하단 GitHub Pages가 그림과 같이 활성화되어있을 것입니다.
 <br /> https://github.com/{ Git ID }/{ Repository 이름 }/settings <br />
 
 ![Git repository Setting 확인]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/settings-1.png){: .align-center}
