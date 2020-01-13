@@ -12,7 +12,7 @@ description              : "JAVA와 Spring Boot 혹은 Sever등 다양한 개발
 url                      : "https://7271kim.github.io/" # GitBlog 호스트 주소
 baseurl                  : # subPath https://7271kim.github.io/blog라고 하고 싶을 시 "/blog" 라고 적는다.
 repository               : "7271kim/7271kim.github.com" # GitHub username/repo-name  
-teaser                   : "/assets/images/senior-couple-4723737_640.jpg" # 홈페이지 기본 티져 이미지
+teaser                   : # "/assets/images/senior-couple-4723737_640.jpg" # 홈페이지 기본 티져 이미지
 logo                     : # 타이틀 옆에 작게 들어갈 이미지.
 masthead_title           : "기록하는 개발자 Blog" # 홈페이지 최 상탄에 들어갈 타이틀
 breadcrumbs              : true # 브래드크럼 사용 여부 true, false (default) , _data/ui-text.yml에 다국어 지원 가능합니다.
@@ -102,7 +102,7 @@ analytics:
 author:
   name             : "김석진"
   avatar           : "/assets/images/profile/poto.jpg" # 프로필 이미지
-  bio              : "꾸준히 하다보면 좋은 개발자가 되어있지 않을까."
+  bio              : "꾸준히 공부하는 개발자 입니다. <br> 블로그 포스트 글에서 잘못된 부분이나 수정하면 좋을 부분에 적극적으로 댓글 남겨주신다면 감사하겠습니다."
   location         : "Republic of Korea"
   email            : "7271kim@naver.com"
   links:

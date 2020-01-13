@@ -10,16 +10,31 @@ last_modified_at: '2018-03-20 16:01:04 -0400'
 categories:
 - Jekyll
 toc: true
+toc_sticky: true
 toc_label: 목차
 ---
 
-기존에 하던 블로그의 모바일 구간에서 깨지는 이슈를 수정하고 디자인적인 아쉬움을 보완하고자 새롭게 GitBlog를 세팅하면서 겪었던 어려움과 해결방안을 서술해보겠습니다.
+기존에 하던 블로그에서 모바일 구간 깨지는 이슈를 수정하고 디자인적인 아쉬움을 보완하고자  하였습니다.
+또한 GitBlog 새로운 테마를 세팅하면서 겪었던 어려움을 공유하고 누구나 바로 깃블로그에 자신의 글을 쉽게 올릴 수 있도록 글을 공유합니다.
 
-## Step 1: Remove Theme Files 
+## Step 1:  깃 블로그란
+깃 블로그란 쉽게 말해 Github저장소에 저장되어 있는 html파일과 같은 정적 웹 문서들을 GitHub에서 무료로 웹에서 볼 수 있도록 호스팅 서비스를 제공해 주는 것입니다.
+때문에 Github을 이용하는 유저들은 **누구나 고유의 정적 웹 사이트 1개를 가질 수 있습니다.** 계정이 없다면 [github]({{ "https://github.com/" }}) 에서 Github계정 생성합니다.
+이후 신규 Repository를 **{Git ID}.github.com** 으로 세팅합니다. 
 
-Remove `_includes`, `_layouts`, `_sass`, `assets` folders and files within. You won't need these anymore as they're bundled in the theme.
+**Please Note:** 해당 포스트는 어느정도 깃의 사용법을 알고 있다는 가정하에 작성하였습니다.
+{: .notice--danger}
 
-If you customized any of these then leave them alone and only remove the untouched ones. If setup correctly your modified versions should act as [overrides](http://jekyllrb.com/docs/themes/#overriding-theme-defaults) to the versions bundled with the theme.
+![Git repository 신규 생성 이미지]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/create-repository.png){: .align-center}
+
+정상적으로 생성이 되었다면 세팅 메뉴 중 하단  GitHub Pages가 그림과 같이 활성화 되어있을 것입니다.
+<br /> https://github.com/{ Git ID }/{ Repository 이름 }/settings <br />
+
+![Git repository Setting 확인]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/settings-1.png){: .align-center}
+
+![Git repository Setting 확인]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/settings-2.png){: .align-center}
+
+위 그림과 같이 정상적으로 반영 되었다면 https://{ Git ID }.github.io/ URL 접근 가능합니다.
 
 ## Step 2: Update `Gemfile`
 
