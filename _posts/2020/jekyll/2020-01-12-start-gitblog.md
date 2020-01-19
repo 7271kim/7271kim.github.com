@@ -386,11 +386,53 @@ comments:
 ![DisQue 세팅]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/disque5.png){: .align-center}
 
 ## Step 9: 구글 검색 가능하게 하기
-게시글에 대해 구글 검색이 가능하게 하고 싶다면 [Google Search Console]({{"https://search.google.com/search-console/about?hl=ko&utm_source=wmx&utm_medium=wmx-welcome"}}){:target="_blank"}을 통해 등록을  진행해야 합니다.  좌측은 구매한 도메인이 있을때 사용하며 하나의 도메인 등록을 통해 모든 서브도메인을 통합 관리하는 방식입니다. 우측(URL prefix)은 일반적인 GitBlog일때입니다. 우선 우측 URL prefix 방식을 통해 먼저 진행하겠습니다.
+게시글에 대해 구글 검색이 가능하게 하고 싶다면 [Google Search Console]({{"https://search.google.com/search-console/about?hl=ko&utm_source=wmx&utm_medium=wmx-welcome"}}){:target="_blank"}을 통해 등록을  진행해야 합니다.  좌측은 구매한 도메인이 있을때 사용하며 하나의 도메인 등록을 통해 모든 서브도메인을 통합 관리하는 방식입니다. 우측(URL prefix)은 일반적인 GitBlog일 때입니다. 우선 우측 URL prefix 방식을 통해 먼저 진행하겠습니다. URL에  http://7271kim.github.io/ 통째로 적습니다.
 ![Google세팅]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/google-regist.png){: .align-center}
 ![Google세팅]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/google-regist2.png){: .align-center}
 
-이제 블로그 도메인에 대한 소유권 인증을 진행해야 합니다. 소유권자가 아니면 당연 검색을 못하게 해야 하기 때문입니다. 소유권 확인을 위한 html파일을 다운로드 한 후 index.html페이지 위치에 올린 후 push합니다.
+이제 블로그 도메인에 대한 소유권 인증을 진행해야 합니다. 사이트에 소유권자만이 구글 검색에 대해 허가를 내줄 수 있기 때문입니다. 소유권 확인을 위한 html파일을 다운로드 한 후 index.html페이지 위치에 올린 후 push합니다. 정상적으로 push가 되었다면 이제 Verify 혹은 확인 버튼을 클릭하여 소유권 인증을 마무리합니다. 아직은 아무 정보가 없어 웹사이트 유입현황이나 정보를 취득하지 못합니다. 물론 검색도 되지 않습니다. 구글 검색 엔진이 웹사이트를 읽어가는 작업이 진행되어야 검색이 노출되는데 이를 크롤링이라 합니다. 정상적인 크롤링을 위해서는 sitemap.xml과 robots.txt이 필요합니다. 
+
+**sitemap.xml**<br>
+sitemap.xml은 웹사이트 내 모든 페이지의 목록을 나열한 파일로 책의 목차와 같은 역할<br>
+ robots.txt 파일과는 달리 sitemap.xml 파일은 꼭 루트 디렉토리에 위치하지 않아도 된다.<br><br>
+**robots.txt**<br>
+검색 엔진 크롤러에서 사이트에 요청할 수 있거나 요청할 수 없는 페이지 설정하는 부분 및 제어하는 부분<br>
+검색 로봇들에게 웹사이트의 사이트맵이 어디 있는지 알려주는 역할<br>
+항상 root 폴더에 위치해 /robots.txt를 입력하면 확인 가능<br>
+sitemap.xml은 정해진 양식으로 제작되어야 하고, 이 양식은 대한민국 뿐 아니라 전 세계적으로 약속된 방식<br>
+{: .notice--info}
+
+### sitemap.xml 생성
+sitemap.xml을 수동으로 작성하기보단 jekyll-sitemap 플러그인 통해서 관리하는 방법을 알아보겠습니다. 우선 Gemfile에 하단부분을 적어줍니다. 
+[https://github.com/7271kim/7271kim.github.com/blob/master/Gemfile]({{"https://github.com/7271kim/7271kim.github.com/blob/master/Gemfile"}}){:target="_blank"}
+```
+gem 'jekyll-sitemap'
+```
+이제 cmd창에서 bundle install 명령어를 통해 플러그인 설치를 진행하고 서버를 시작합니다.
+```
+# bundle install
+# jekyll serve
+```
+정상적으로 설치가 되었다면 아래와 같이 접근 가능합니다. <br>
+[http://localhost:4000/sitemap.xml]({{"http://localhost:4000/sitemap.xml"}}){:target="_blank"}<br>
+플러그인이 자동으로 페이지에 있는 모든 정보를 가지고 와 sitemap을 만들어 줍니다.
+
+### robots.txt 생성
+이제 index.html위치에 robots.txt파일을 생성하고 아래에 내용을 작성합니다.
+[https://github.com/7271kim/7271kim.github.com/blob/master/Gemfile]({{"https://github.com/7271kim/7271kim.github.com/blob/master/Gemfile"}}){:target="_blank"}
+```
+# bundle install
+# jekyll serve
+```
+
+이제 좌측 도메인 등록방법을 설명하겠습니다.  http를 제외한 도메인 주소를 작성합니다. 필자의 도메인 주소인 honbabzone.com을 적어준 후 TXT를 얻습니다.<br><br>
+![Google세팅]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/google-regist3.png){: .align-center}<br>
+![Google세팅]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/google-regist4.png){: .align-center}<br>
+
+해당 텍스트를 도메인 설정에 등록합니다. 
+![Google세팅]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/google-regist5.png){: .align-center}
+
+10분정도 시간이 지난 후 도메인 소유권 확인을 누르면 도메인 인증이 됩니다.
 
 이상으로 블로그를 처음 시작하시는 분들에게 도움이 되었길 바라며 GitBlog 시작하기에 대한 포스팅을 마치겠습니다. 감사합니다.
 {: .notice--info}
