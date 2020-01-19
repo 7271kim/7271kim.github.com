@@ -419,11 +419,29 @@ gem 'jekyll-sitemap'
 
 ### robots.txt 생성
 이제 index.html위치에 robots.txt파일을 생성하고 아래에 내용을 작성합니다.
-[https://github.com/7271kim/7271kim.github.com/blob/master/Gemfile]({{"https://github.com/7271kim/7271kim.github.com/blob/master/Gemfile"}}){:target="_blank"}
+[https://github.com/7271kim/7271kim.github.com/blob/master/robots.txt]({{"https://github.com/7271kim/7271kim.github.com/blob/master/robots.txt"}}){:target="_blank"}
 ```
-# bundle install
-# jekyll serve
+User-agent: *
+Allow: /
+
+Sitemap: https://7271kim.github.io/sitemap.xml
 ```
+
+모든 웹사이트 콘텐츠에 대한 모든 웹 클롤러의 접근을 차단<br>
+User-agent: *<br>
+Disallow: /<br><br>
+만약 구글 로봇만 차단시키고 싶다면 User-agent에 * 부분을 Googlebot으로 변경하여 설정<br>
+User-agent: Yeti<br>
+Disallow: /hello/<br><br>
+이렇게 설정하면 웹사이트의 모든 콘텐츠의 네이버 검색로봇의 크롤링을 허용하되, /hello/  디렉토리 안의 페이지에 대한 접근만 차단한다는 의미
+{: .notice--info}
+
+### Google에 sitemap.xml등록 
+ [Google Search Console]({{"https://search.google.com/search-console"}}){:target="_blank"}페이지 메뉴 중 sitemaps에 들어가서 생성한 sitemap.xml을 제출합니다. 
+![Google세팅]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/google-regist6.png){: .align-center} 
+
+**Please Note:** sitemap까지 등록되었다면 검색 노출까지 일주일 정도 기간이 걸린다고 합니다.
+{: .notice--danger}
 
 이제 좌측 도메인 등록방법을 설명하겠습니다.  http를 제외한 도메인 주소를 작성합니다. 필자의 도메인 주소인 honbabzone.com을 적어준 후 TXT를 얻습니다.<br><br>
 ![Google세팅]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/google-regist3.png){: .align-center}<br>
