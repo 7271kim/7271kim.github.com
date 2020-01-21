@@ -312,7 +312,7 @@ concat": "^1.0.3"
 ```
 
 #### cmd창에서 명령어 실행
-해당 명령어를 실행 하면 현재 /assets/js/ 아래에 있는 js파일들이 main.min.js에 합쳐서 나옵니다. uglifyjs 옵션에 대해 더 알고자 한다면 아래 문서를 참고하시면 됩니다.
+package.json이 존재하는 위치에서 해당 명령어를 실행 하면 현재 /assets/js/ 아래에 있는 js파일들이 main.min.js에 합쳐서 나옵니다. uglifyjs 옵션에 대해 더 알고자 한다면 아래 문서를 참고하시면 됩니다.
 [http://fibjs.org/ko/docs/awesome/module/uglify-js.md.html]({{"http://fibjs.org/ko/docs/awesome/module/uglify-js.md.html"}}){:target="_blank"}
 
 ```
