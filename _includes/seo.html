@@ -25,6 +25,12 @@
   {%- assign seo_description = seo_description | markdownify | strip_html | strip_newlines | escape_once -%}
 {%- endif -%}
 
+{%- assign article_tag1 = page.article_tag1 | default: site.article_tag1 -%}
+{%- assign article_tag2 = page.article_tag2 | default: site.article_tag2 -%}
+{%- assign article_tag3 = page.article_tag3 | default: site.article_tag3 -%}
+{%- assign article_section = page.article_section | default: site.article_section -%}
+{%- assign meta_keywords = page.meta_keywords | default: site.meta_keywords -%}
+
 {%- assign author = page.author | default: page.authors[0] | default: site.author -%}
 {%- assign author = site.data.authors[author] | default: author -%}
 
@@ -71,6 +77,23 @@
 
 {% if seo_description %}
   <meta property="og:description" content="{{ seo_description }}">
+{% endif %}
+
+{% if meta_keywords %}
+  <meta name="keywords" content="{{ meta_keywords }}">
+{% endif %}
+
+{% if article_tag1 %}
+  <meta property="article:tag" content="{{ article_tag1 }}">
+{% endif %}
+{% if article_tag2 %}
+  <meta property="article:tag" content="{{ article_tag2 }}">
+{% endif %}
+{% if article_tag3 %}
+  <meta property="article:tag" content="{{ article_tag3 }}">
+{% endif %}
+{% if article_section %}
+  <meta property="article:section" content="{{ article_section }}">
 {% endif %}
 
 {% if page_large_image %}
