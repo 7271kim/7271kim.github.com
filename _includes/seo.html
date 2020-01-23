@@ -128,7 +128,7 @@
 {% endif %}
 
 {% if og_type == "article" and page.last_modified_at %}
-  <meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">
+  <meta property="article:modified_time" content="{{ page.date | date_to_xmlschema }}">
 {% endif %}
 
 {% if site.facebook %}
