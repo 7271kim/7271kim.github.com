@@ -18,6 +18,7 @@ article_tag2: minimal-mistakes
 article_tag3: Jekyll
 article_section: 깃 블로그 따라하기
 meta_keywords: 깃블로그,GitBlog,GitHub블로그,minimal-mistakes,Jekyll
+last_modified_at: 2020-01-23T00:00:00+08:00
 ---
 
 기존에 하던 깃 블로그에서 모바일 구간 깨지는 이슈를 수정하고 디자인적인 아쉬움을 보완하고자  하였습니다.
