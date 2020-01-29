@@ -6,7 +6,6 @@ read_time: true
 comments: true
 share: true
 related: true
-last_modified_at: '2018-03-20 16:01:04 -0400'
 categories:
 - Jekyll
 toc: true
