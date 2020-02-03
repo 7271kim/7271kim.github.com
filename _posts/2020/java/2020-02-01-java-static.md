@@ -6,8 +6,8 @@ read_time: true
 comments: true
 share: true
 related: true
-tags:
-- JAVA 관련
+categories:
+- JAVA
 description: static을 제대로 이해하지 못하고 코딩하던 시절, 혼란스러웠던 부분이 있어 이를 방지하고자 static이 무엇인지 메모리
   구조와 함께 알아보겠습니다.
 article_tag1: JAVA Static
