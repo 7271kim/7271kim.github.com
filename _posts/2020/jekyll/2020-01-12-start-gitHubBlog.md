@@ -62,7 +62,7 @@ last_modified_at: 2020-01-23T00:00:00+08:00
 
 Jekyll은 하나의 동적 객체 지향 스크립트 프로그래밍 언어인 Ruby로 작성되었기 때문에 로컬 개발 환경 세팅을 위해서는 Rubby 설치가 필요합니다. 필자는[ https://rubyinstaller.org/downloads/ ]({{" https://rubyinstaller.org/downloads/ "}}){:target="_blank"}해당 사이트에서 2.5.7 버전으로 받아 설치하였습니다. 이제 minimal-mistakes테마를 다운받고 압축해제 하였던 폴더 위치로 이동합니다. 이 후 cmd창을 열어 아래 명령어를 차례로 실행합니다. 꼭 **Gemfile**이 있는 위치에서 실행하여야 합니다.
 
-```ruby
+```java
 
 # gem install bundler
 # bundle 
@@ -110,7 +110,7 @@ Jekyll 폴더구조 :  [https://jekyllrb-ko.github.io/docs/structure/ ]({{"https
 {: .notice--info}
 
  
-```ruby
+```java
 
 # gem install bundler
 # bundle 
@@ -124,7 +124,7 @@ Jekyll 폴더구조 :  [https://jekyllrb-ko.github.io/docs/structure/ ]({{"https
 지킬 테마에서 자신의 블로그 페이지에 맞게 커스텀 하기위해 _config.yml 을 수정하였습니다.  웹에대한 기본 지식이 있다면 어디를 수정하면 어디가 반영 될 지 직관적으로 알 수 있게 되어있습니다.  꼭 수정해 주어야 하는 부분만 포스팅 하고 이 외 수정한 부분은 아래 주소에서 확인하시기 바랍니다.
 [https://github.com/7271kim/7271kim.github.com/blob/master/_config.yml]({{"https://github.com/7271kim/7271kim.github.com/blob/master/_config.yml"}}){:target="_blank"} 
 
-```ruby
+```java
 
 
 minimal_mistakes_skin    : "default" # 태마 색 설정 "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise" 
@@ -233,7 +233,7 @@ defaults:
 원하는 네비게이션 url을 설정해 줍니다. http://naver.com과 같이 상대경로가 아닌 절대경로도 가능합니다. 
 [https://github.com/7271kim/7271kim.github.com/blob/master/_data/navigation.yml]({{"https://github.com/7271kim/7271kim.github.com/blob/master/_data/navigation.yml"}}){:target="_blank"}
 
-```ruby
+```java
 main:
   - title: "Categories"
     url: /categories/
@@ -251,7 +251,7 @@ main:
 <br>
 **category-archive.md에 대한 예시**
 
-```ruby
+```java
 ---
 title: "Posts by Category"
 layout: categories
@@ -265,7 +265,7 @@ author_profile: true
 하단 defaults: 부분에 _pages 부분을 추가합니다. 
 [https://github.com/7271kim/7271kim.github.com/blob/master/_config.yml]({{"https://github.com/7271kim/7271kim.github.com/blob/master/_config.yml"}}){:target="_blank"} 
 
-```ruby
+```java
 defaults:
   # _posts
   - scope:
@@ -299,7 +299,7 @@ minimal-mistakes 테마의 경우 node.js를 이용하여 js를 쉽게 minify하
 [https://github.com/7271kim/7271kim.github.com/blob/master/package.json]({{"https://github.com/7271kim/7271kim.github.com/blob/master/package.json"}}){:target="_blank"} <br>
 
 ① devDependencies안에 해당 내용을 추가합니다.
-```ruby
+```java
 concat": "^1.0.3"
 ```
 
