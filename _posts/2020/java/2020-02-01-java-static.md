@@ -27,7 +27,7 @@ toc_label: 목차
 ```java
 public static double pi = 3.14
 ```
-다른 하나는 메소드 앞에 붙는 경우로 **static 메소드 혹은 정적 메소드**라고 합니다.
+다른 하나는 메서드 앞에 붙는 경우로 **static 메서드 혹은 정적 메서드**라고 합니다.
 ```java
 public static int plus ( int x , int y ){
      return x + y; 
@@ -46,11 +46,11 @@ JVM은 크게 Garbage collector, Execution Engine, Class Loader, Runtime Data Ar
 
 Runtime Data Area은 Method Area, Heap Area, Stack Area, PC register, Native Method Stack 총 5가지로 구분됩니다. 
 이 중에서 static을 이해하는 데 필요한 3가지의 영역 중 하나인 **Method Area(Static Area)**은 초기 로드 필요한 정보들 즉 필요한 패키지 클래스, 인터페이스, 상수, **static변수**, final 변수, 클래스 멤버 변수 등 **로드된 후 메모리에 항상 상주하고 있는 영역**입니다. 
-Stack Area는 클래스 안 메소드 실행 시 해당 영역이 할당되며 메소드에서 직접 사용할 지역 변수, 파라미터, 리턴 값, 참조 변수일 경우 주소 값들이 저장됩니다. 
-Heap Area은 메소드 안에서 사용되는 객체들을 위한 영역으로 new를 통해 생성된 객체, 배열, immutal 객체 등의 메모리와 값이 저장됩니다. 
+Stack Area는 클래스 안 메서드 실행 시 해당 영역이 할당되며 메서드에서 직접 사용할 지역 변수, 파라미터, 리턴 값, 참조 변수일 경우 주소 값들이 저장됩니다. 
+Heap Area은 메서드 안에서 사용되는 객체들을 위한 영역으로 new를 통해 생성된 객체, 배열, immutal 객체 등의 메모리와 값이 저장됩니다. 
 
 ## Step 3: Static과 메모리 구조
-클래스 로더가 .class파일을 탐색 중**static 키워드를 보는 순간 객체가 생성되지 않아도 항상 메모리를 할당해야 하는 멤버로 보고 Method Area(Static Area)에 메모리를 할당**합니다. 그래서 static 키워드가 붙은 멤버들은 **객체(인스턴스)에 소속된 변수가 아니라 클래스에 소속된 변수**이기 때문에 클래스 변수 혹은 클래스 메소드라고도 부릅니다. new를 통해 객체를 생성하면 각 인스턴스는 서로 독립적이지만 이러한 특징 그래서 **static 키워드가 붙은 멤버들은 모든 객체가 메모리 영역을 공유**하기에 공통으로 같은 영역을 바라보기에 아래와 같은 코드가 가능합니다.
+클래스 로더가 .class파일을 탐색 중**static 키워드를 보는 순간 객체가 생성되지 않아도 항상 메모리를 할당해야 하는 멤버로 보고 Method Area(Static Area)에 메모리를 할당**합니다. 그래서 static 키워드가 붙은 멤버들은 **객체(인스턴스)에 소속된 변수가 아니라 클래스에 소속된 변수**이기 때문에 클래스 변수 혹은 클래스 메서드라고도 부릅니다. new를 통해 객체를 생성하면 각 인스턴스는 서로 독립적이지만 이러한 특징 그래서 **static 키워드가 붙은 멤버들은 모든 객체가 메모리 영역을 공유**하기에 공통으로 같은 영역을 바라보기에 아래와 같은 코드가 가능합니다.
 ```java
 public class Counter {
     public static int count = 0;
@@ -71,7 +71,7 @@ public class Counter {
 출력 
 {% endhighlight %}
 
-같은 이유로 static 메소드 안에서는 사용할 변수들은 메모리에 올라가는 순서 때문에 아래와 같은 코드는 불가능합니다. (스태틱 메소드 안에서는 인스턴스 변수 접근이 불가능합니다)
+같은 이유로 static 메서드 안에서는 사용할 변수들은 메모리에 올라가는 순서 때문에 아래와 같은 코드는 불가능합니다. (스태틱 메서드 안에서는 인스턴스 변수 접근이 불가능합니다)
 ```java
 public class Counter {
     public int count = 0;
