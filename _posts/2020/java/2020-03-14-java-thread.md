@@ -1,5 +1,5 @@
 ---
-title: Thread란 ? - JAVA에서 멀티쓰레드 사용하기
+title: JAVA 쓰레드(Thread)란 ? - JAVA에서 멀티쓰레드 사용하기
 layout: single
 author_profile: true
 read_time: true
