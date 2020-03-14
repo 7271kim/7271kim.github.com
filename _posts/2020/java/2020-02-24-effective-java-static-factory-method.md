@@ -277,8 +277,7 @@ public static void main(String args[]){
 private 생성자만 제공한다면 상속이 되지 않습니다. 하위 타입의 클래스 상속을 허용하려면 public 혹은 protected 생성자가 필요합니다. 또한, 정적 팩터리 메서드를 사용하기 위해서는 해당 클래스를 인스턴스화 하는 방법을 찾아야 합니다. new를 통한 인스턴스화는 모든 개발자가 알고 있지만 매서드를 통해 제공한다면 찾아야 합니다.
 
 **참고자료** <br> 
-- Effectie Java 3/E - 조슈아 블로크
-- [ https://www.youtube.com/watch?v=X7RXP6EI-5E&t=456s ]({{"https://www.youtube.com/watch?v=X7RXP6EI-5E&t=456s"}}){:target="_blank"} (백기선 강사님 강의)
-- [ https://johngrib.github.io/wiki/static-factory-method-pattern/ ]({{"https://johngrib.github.io/wiki/static-factory-method-pattern/"}}){:target="_blank"} 
-
+-- Effectie Java 3/E - 조슈아 블로크<br>
+-- [ https://www.youtube.com/watch?v=X7RXP6EI-5E&t=456s ]({{"https://www.youtube.com/watch?v=X7RXP6EI-5E&t=456s"}}){:target="_blank"} (백기선 강사님 강의)<br>
+-- [ https://johngrib.github.io/wiki/static-factory-method-pattern/ ]({{"https://johngrib.github.io/wiki/static-factory-method-pattern/"}}){:target="_blank"} 
 {: .notice--info}
