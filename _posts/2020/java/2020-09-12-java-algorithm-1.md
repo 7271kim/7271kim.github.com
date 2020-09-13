@@ -68,6 +68,8 @@ private static void result( String[] people ) {
 
 ```
 
+
+
 #### 재귀함수로 구현
 위로 푼 방법과 유사합니다. 다만 좀 더 코드를 줄일 수 있는 장점이 있습니다. 미리 3개를 뽑는 것이니 크기가 3인 result 배열을 만들어 두고 앞에부터 채워가는데 기존 나왔던 것을 제외하고 채워가는 것입니다. 
 ```java
@@ -171,7 +173,9 @@ private static void combination( String[] people, int end, int start, String[] t
 때 false를 return하는 프로그램입니다. 직관적으로 특정 알고리즘 없이 완전 탐색으로 푼다면, 모든 격자를 시작점으로 인접 8칸에 원하는 단어가 
 있는지 확인하는 것입니다.
 
+
 ```java
+{% raw %}
 public static void main(String args[]){
     String[][] word = {
                         {"N","N","N","N","S"},
@@ -183,6 +187,7 @@ public static void main(String args[]){
 
     System.out.println(findWord( word, "YES" ));
 }
+{% endraw %}
 ```
 
 ```java
@@ -247,9 +252,10 @@ private static boolean checking(String[][] word, String findText, int checkingIn
 프로그램을 짠다고 생각해봅시다.
 
 ```java
+{% raw %}
 String[] name = {"석진", "우리", "현식", "희범","성우","밥"};
 int[][] friend = {{0,1},{0,2},{1,2},{1,3},{1,4},{2,3},{2,4},{3,4},{3,5},{4,5}};
-
+{% endraw %}
 check( name, friend );
 ```
 완전 탐색을 통해 짝을 짓는 방법은 한명씩 짝을 구성하면서 둘이 친구인 지를 확인하여 친구인 경우만 결과에 추가하는 방법입니다. 
