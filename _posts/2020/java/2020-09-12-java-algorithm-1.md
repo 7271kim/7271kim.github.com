@@ -184,6 +184,7 @@ public static void main(String args[]){
     System.out.println(findWord( word, "YES" ));
 }
 ```
+
 ```java
 private static boolean findWord(String[][] word, String findText) {
     //1. 종료 조건 현재 위치가 마지막이고, 마지막 단어와 매칭 여부
@@ -209,7 +210,7 @@ private static boolean findWord(String[][] word, String findText) {
 private static boolean checking(String[][] word, String findText, int checkingIndex, int yIndex, int xIndex, boolean[][] checking) {
     boolean result = false;
     int[] yCheck = {-1, -1, -1, 0, 0, 1, 1, 1};
-    int[] xCheck = {-1, 0, 1, -1, 1, -1, 0 ,1};
+    int[] xCheck = {-1, 0, 1, -1, 1, -1, 0, 1};
     
     if( yIndex == word.length || yIndex < 0)  return false;
     if( yIndex == word.length || yIndex < 0) return false;
@@ -239,9 +240,7 @@ private static boolean checking(String[][] word, String findText, int checkingIn
     
     return  result;
 }
-
 ```
-
 
 ### 소풍
 만약 n명의 사람이 소풍을 놀러가서 2명씩 짝을 지어야 하는데, 서로 친구라는 단서가 배열로 주어질 때, 서로 친구인 경우만 짝을 짓는 케이스를 출력하는 
