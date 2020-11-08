@@ -300,7 +300,7 @@ minimal-mistakes 테마의 경우 node.js를 이용하여 js를 쉽게 minify하
 
 ① devDependencies안에 해당 내용을 추가합니다.
 ```java
-concat": "^1.0.3"
+"concat": "^1.0.3"
 ```
 
 ② scripts에 하위 내용 추가 
