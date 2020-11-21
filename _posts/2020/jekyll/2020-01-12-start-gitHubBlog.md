@@ -64,7 +64,8 @@ last_modified_at: 2020-01-23T00:00:00+08:00
 
 Jekyll은 하나의 동적 객체 지향 스크립트 프로그래밍 언어인 Ruby로 작성되었기 때문에 로컬 개발 환경 세팅을 위해서는 Rubby 설치가 필요합니다. 필자는[ https://rubyinstaller.org/downloads/ ]({{" https://rubyinstaller.org/downloads/ "}}){:target="_blank"}해당 사이트에서 2.5.7 버전으로 받아 설치하였습니다. 이제 minimal-mistakes테마를 다운받고 압축해제 하였던 폴더 위치로 이동합니다. 이 후 cmd창을 열어 아래 명령어를 차례로 실행합니다. 꼭 **Gemfile**이 있는 위치에서 실행하여야 합니다.
 
-![최종 폴더구조]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/structure-2.png){: .align-center .open-new}
+![최종 폴더구조]({{ site.url }}{{ site.baseurl }}/assets/images/post/jekyll/structure-2.png){: .align-center .open-new} 
+ 
 
 ```java
 
