@@ -19,7 +19,7 @@ toc_label: 목차
 ---
 # Step 4 : 비선형구조  
 ## 트리(Tree)
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/data-tree.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/data-tree.png){: .align-center .open-new}
 트리란 위에도 가볍게 언급한, 하나의 루트 노드와 0개 이상의 자식노드로 이루어진 자료구조입니다. 주로 계층적 관계( Hierarchical Relationship )를 표현하는 자료구조입니다.  트리관련 용어를 살펴보겠습니다.
  - Node (노드): A,B,C와 같은 요소입니다.
  - Root Node (루트노드): 최상위 노드 즉 A노드입니다.
@@ -34,23 +34,23 @@ toc_label: 목차
 Tree의 자료구조를 표현하는 방법은 배열과 LinkedList로 표현할 수 있습니다.
 
 ### 이진 트리( Binary Tree )
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/data-binary-tree.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/data-binary-tree.png){: .align-center .open-new}
 각 노드가 최대 두 개의 자식을 갖는 Tree입니다. 꼭 자식 노드가 다 차지 않아도 됩니다. 
 
 ### 완전 이진 트리 ( Complete Binary Tree )
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/com-b-t.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/com-b-t.png){: .align-center .open-new}
 마지막 레벨을 제외한 모든 노드는 채워져 있어야 하며 마지막 레벨은 왼쪽부터 채워져 있는 Binary Tree를 말합니다. 
 
 ### 정 이진트리 ( Full Binary Tree ) 
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/full-b-t.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/full-b-t.png){: .align-center .open-new}
 모든 노드가 0개 또는 2개의 자식 노드를 갖는 이진트리입니다.
 
 ### 포화 이진트리 ( Perfect Binary Tree )
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/p-b-t.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/p-b-t.png){: .align-center .open-new}
 모든 레벨의 노드가 꽉 차있는 이진트리입니다.
 
 ### 이진 탐색 트리 ( Binary Search Tree )
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/b-s-t.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/b-s-t.png){: .align-center .open-new}
 
 중복된 값이 없으면서 왼쪽 자식 노드 값 < root 노드 < 오른쪽 자식 노드 값을 만족하는 이진트리입니다. root 노드 하위 왼쪽 노드 집합들은 root 노드 값보다 작아야 하며 우측 집합은 커야 합니다.<br><br><br>
 
@@ -60,7 +60,7 @@ ex)  수식 트리 Expression Tree <br>
 수식을 tree형태로 분리한 tree <br>
 7 + 4 * 2 -1 를 나타낸 트리는 아래와 같습니다.<br>
 
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/e-t.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/e-t.png){: .align-center .open-new}
 
 
 #### Linked List로 Tree 구현
@@ -289,7 +289,7 @@ tree.postOrderTraversal(1); // 후위순회 left -> right -> root >> 4 5 2 3 1
 ```
 
 ## 그래프
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/graph.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/graph.png){: .align-center .open-new}
 
 그래프란 위 그림에서 보는 것처럼 노드와 노드를 연결한 간선이 존재하는 자료구조입니다. 이전 자료구조를 공부하면서 봤었던 용어들입니다.
 
@@ -312,7 +312,7 @@ tree.postOrderTraversal(1); // 후위순회 left -> right -> root >> 4 5 2 3 1
 
 솔직히 업무에서 그래프를 다루거나 사용한 사례는 없어 잘 아는 자료구조는 아닙니다. 단지 백준 알고리즘 혹은 카카오 알고리즘을 풀어 볼 때 관련 내용 등장하면 사용 및 공부하기 위해 정리합니다. 그래프 자료구조를 구현하는 방법은 크게 두 가지가 존재합니다. 하나는 인접 리스트로 구현하는 방법과, 인접행렬로 구현하는 방법입니다.
 
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/graph-sample.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/graph-sample.png){: .align-center .open-new}
 
 #### 인접 리스트(Adjacency List)로 구현
 내용은 간단합니다. 배열의 index는 자기 자신의 노드 위치를 말하며, 저장된 value는 해당 노드와 연결된 인접 노드를 가리킵니다. 추가로 두 노드 사이의 가중치를 저장하도록 양방향 그래프로 구현해보겠습니다.
@@ -428,7 +428,7 @@ graph.print();
 <br>
 이런 그래프를 일반적으로 탐색하는 방법은 2가지입니다. 하나는 깊이우선탐색(DFS), 다른 하나는 너비 우선 탐색(BFS)입니다.
 
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/bfs.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/bfs.png){: .align-center .open-new}
 #### 깊이우선탐색( Depth First Search )
 하나의 정점에서 시작하여 다음 인접 노드를 지속해서 확인하여 모든 노드를 탐색하는 방법입니다. 원리는 root노드를 정한 후 인접 노드를 stack에 집어넣고 stack을 순회하면서 호출된 적 있는지 확인 후 반복하는 일만 진행하면 됩니다.
 

@@ -42,7 +42,7 @@ JVM은 크게 Garbage collector, Execution Engine, Class Loader, Runtime Data Ar
 **Please Note:** 좀 더 JVM에 대해 자세한 부분은 [JVM 포스트]({{"/java/java-jvm/"}}){:target="_blank"}를 참고하시기 바랍니다.
 {: .notice--danger}
 
-![jvm의 구조]({{ site.url }}{{ site.baseurl }}/assets/images/post/jvm/jvm-structure.png){: .align-center}
+![jvm의 구조]({{ site.url }}{{ site.baseurl }}/assets/images/post/jvm/jvm-structure.png){: .align-center .open-new}
 
 Runtime Data Area은 Method Area, Heap Area, Stack Area, PC register, Native Method Stack 총 5가지로 구분됩니다. 
 이 중에서 static을 이해하는 데 필요한 3가지의 영역 중 하나인 **Method Area(Static Area)**은 초기 로드 필요한 정보들 즉 필요한 패키지 클래스, 인터페이스, 상수, **static변수**, final 변수, 클래스 멤버 변수 등 **로드된 후 메모리에 항상 상주하고 있는 영역**입니다. 

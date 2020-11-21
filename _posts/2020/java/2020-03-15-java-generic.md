@@ -210,7 +210,7 @@ public class BeforeTest  {
 ## Step 5 : 와일드카드 타입.
 코드에서 ?를 일반적으로 와일드카드라고 부릅니다. 사용하는 경우는 아래와 같습니다.
 
-![java 제네릭 하이라키]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/generic.png){: .align-center}
+![java 제네릭 하이라키]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/generic.png){: .align-center .open-new}
 ### &lt;?>
 모든 클래스나 인터페이스가 올 수 있습니다. 즉 제한없음.
 A ~ E 모두 올 수 있다.

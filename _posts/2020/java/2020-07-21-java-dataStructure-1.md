@@ -118,17 +118,17 @@ List<Integer> numberList= new ArrayList>();
 #### 단순 연결 리스트 ( simple linked list )
 가장 단순한 형태로 현재의 노드들은 다음 노드를 가리키는 하나의 참조 만을 가지고 있기에 한쪽 방향의 노드의 접근만 가능합니다.
 
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/SimpleLinkedList.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/SimpleLinkedList.png){: .align-center .open-new}
 
 
 #### 이중 연결 리스트( double linked list )
 끝점과 시작점이 연결된 구조입니다.
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/double-linked-list.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/double-linked-list.png){: .align-center .open-new}
 
 #### 원형 연결 리스트 ( Circular linked list )
 단순 연결 리스트 자료구조에서 마지막 노드를 첫 노드와 연결한 구조입니다.
 
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/circular-linked-list.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/circular-linked-list.png){: .align-center .open-new}
 
 
 위와 같은 개념적인 형상을 기반으로 원하는 형식으로 자료구조를 만들면 됩니다. 가볍게 이중 연결 리스트 자료구조를 만드는 방법을 보여드리겠습니다. java에서 제공하는 LinkedList 같은 경우 데이터를 저장하는 각 노드가 이전 노드와 다음 노드의 상태만 알고 있는 자료구조입니다. 이제 제일 복잡해 보이는 double linked list를 구현해 보겠습니다. 그리고 해당 자료구조를 만드는 데 필요한 add, remove 메서드, 그리고 특정 index 위치의 데이터를 추출하기 위한 get 메서드, 전체를 순회하는 toString메서드를 구현하겠습니다.
@@ -265,7 +265,7 @@ System.out.println(doubleLinked.toString());
 
 
 ## 스택(Stack)
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/stack.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/stack.png){: .align-center .open-new}
 
 Stack이란 마지막에 들어온 데이터를 먼저 내보내는 후입선출(LIFO)을 표현하기 위한 자료구조입니다. 예를 들어 웹에서 History는 마지막 접근했던 페이지로 돌아가야 할 경우 이런 경우를 위해 사용하는 자료구조입니다. 위에서 작성했던 코드를 응용해서 push( 집어넣는 메서드 ), pop( 가져오는 메서드 ) 정도만 새로 작성한다면 기본적으로 사용할 수 있습니다.( 물론 push, pop 두 가지만으로는 불충분 합니다.) 필자는 자바에서 제공하는 java.util.Stack 라이브러리 stack을 사용하는 방법을 기술하겠습니다.
 
@@ -297,7 +297,7 @@ System.out.println("Stack이 비었습니까 : " + stack.isEmpty());
 ```
 
 ## 큐(Queue)
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/queue.png){: .align-center} 
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/queue.png){: .align-center .open-new} 
 <br>
 Queue란 먼저 들어온 데이터를 먼저 내보내는 선입선출(FIFO)을 표현하기 위한 자료구조입니다. 예를 들어 프린트나 테이블 예약 같은 경우 먼저 예약한 사람이 우선일 때 필요한 자료구조입니다.<br>
 java에서 que를 사용하기 위해서는 java.util.Queue를 구현한 클래스를 사용하면 됩니다. 내부 연결 구조를 배열로 만들었느냐, 연결 리스트 구조로 만들었느냐에 따라 내부 로직과 위 리스트에서 언급한 장단점이 생기게 되지만 사용법은 같습니다.
@@ -445,7 +445,7 @@ while( !priorityQueue.isEmpty() ) {
 
 
 ### Heap
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/data-structure-heap.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/data-structure-heap.png){: .align-center .open-new}
 Heap이란 우선순위를 둔 우선순위 큐를 위해 필요한 자료구조로 부모의 노드는 항상 자식의 노드보다 클 경우를 Max heap, 작을 경우를 Min Heap라고 합니다. 그럼 Max Heap, Min Heap 자료구조를 구성하기 위해 직관적으로 필요한 데이터를 넣는 add, 맨 위 데이터를 뽑은 pop 메서드를 구현해보겠습니다. 또한, 위와 같은 tree구조를 표현하기 위해 Node가 아닌 배열을 통해 완전이진트리를 구성하겠습니다. 배열을 통해 Tree이진 트리 구성은 관련은 아래에서 더 자세하게 다루겠습니다. MaxHeap 구현 방법입니다.
 
  - add() : Max Heap의 경우 마지막 노드에 값을 넣은 후 부모 노드와 비교 후 들어온 값이 크면 부모 노드와 교체한다. 최 상위 꼭대기까지 같은 로직을 반복한다.
@@ -567,7 +567,7 @@ maxHeap.add(new Student("나석진", 100));
 {% endhighlight %}
 
 ## 덱( Deque )
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/deque.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/deque.png){: .align-center .open-new}
 Deque란 Stack과 queue 양쪽으로 엘리먼트의 삽입과 삭제를 수행할 수 있는 자료구조 입니다.
 
  - add() : 데이터를 que형식으로 삽입합니다.. 

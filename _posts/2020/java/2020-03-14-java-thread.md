@@ -350,7 +350,7 @@ public  void setValue( int value ) {
 ### 스레드 상태 제어
 실행 중인 스레드 상태를 변경하는 것을 스레드 상태 제어라고 합니다. 멀티 프로그램을 만들기 위해서는 정교한 스레드 상태 제어가 필요합니다. 상태를 제어하는 메소드는 아래 그림과 같습니다. 취소선을 가지는 메소드들은 스레드의 안정성을 해칠 수 있다고 하여 더는 사용하지 않도록 권장되는 Deprecated 메소드들 이기 때문에 사용하지 않는 것이 좋습니다.
 
-![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/thread-status.png){: .align-center}
+![java 쓰레드 상태]({{ site.url }}{{ site.baseurl }}/assets/images/post/java/thread-status.png){: .align-center .open-new}
 스레드 상태제어에 관해서는 필자가 스레드에 관해 아직 단순한 작업만 하여 머리로 체득한 상태가 아니라 좀 더 알게 된다면 해당 부분 수정하겠습니다.
 
 ## Step 6 : 스레드 그룹

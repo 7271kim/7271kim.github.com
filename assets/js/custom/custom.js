@@ -6,4 +6,12 @@
 			$('.notice--danger.align-center').removeClass('hidden');
 		}
 	}
+	
+	var imgOpen = document.getElementsByClassName('open-new'); 
+	for (var x = 0; x < imgOpen.length; x++) {
+	    imgOpen.item(x).onclick=function() {
+	        window.open(this.src)
+	    };
+	}
+
 })()
