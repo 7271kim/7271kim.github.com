@@ -4,6 +4,15 @@ layout: archive
 
 {{ content }}
 
+{% if paginator.next_page == 2 %}
+    <h3 class="archive__subtitle">인기</h3>
+    {% for post in site.posts %}
+        {% if post.popular %}
+            {% include archive-single.html %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
 {% for post in paginator.posts %}

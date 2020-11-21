@@ -6,6 +6,7 @@ read_time: true
 comments: true
 share: true
 related: true
+popular: true
 categories:
 - Jekyll
 toc: true

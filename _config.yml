@@ -288,6 +288,7 @@ defaults:
       comments: true
       share: true
       related: true
+      popular: false
   
   # _pages
   - scope:
