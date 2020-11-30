@@ -5,7 +5,7 @@ layout: archive
 {{ content }}
 
 {% if paginator.next_page == 2 %}
-    <h3 class="archive__subtitle">인기</h3>
+    <h3 class="archive__subtitle">자주 찾는 사이트</h3>
     {% for post in site.posts %}
         {% if post.popular %}
             {% include archive-single.html %}
