@@ -26,7 +26,9 @@ toc_label: 목차
 Function, Object, Array, Number, String 등의 오브젝트가 이에 속합니다.<br>
 {: .notice--info}
 
-# var , let, const
+# var, let, const
+변수를 설정하는 방법에는 크게 3가지 선언문이 존재합니다. ES6 이전에 존재하였던 var과 ES6에 등장한 let, cont 변수에  관해 한번 차이점을 
+비교해보겠습니다.
 
 ## var
 var의 경우는 ES6 이전의 문법으로 매우 유연한 방식의 변수 선언 방법입니다. var의 경우는 let, cont와 다르게 블럭 단위 scope가 
