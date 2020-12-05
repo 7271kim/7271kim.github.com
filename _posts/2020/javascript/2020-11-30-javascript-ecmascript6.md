@@ -18,6 +18,7 @@ last_modified_at: '2020-11-30 14:00:00 +08000'
 toc: true
 toc_sticky: true
 toc_label: 목차
+popular: true
 ---
 최근 Node.js를 공부하면서 Front-End 개발에 높은 가능성과 흥미를 느끼게 되어 front-end 개발자가 되기 위한 첫 관문인 ES6 문법에
 대해 한번 정리하는 게시물을 작성하고자 합니다. 주안점은 차이점을 서술하는 것이지 javascript 문법을 공부하는 포스트는 아닙니다.
