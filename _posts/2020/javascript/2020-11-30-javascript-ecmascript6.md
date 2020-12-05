@@ -124,6 +124,111 @@ test2 = 3; // Uncaught TypeError: Assignment to constant variable 에러 발생
 console.log(test2); // 진행 안됨 
 ```
 
+# arrow 함수
+쉽게 설명해서 기존 function(){} 으로 함수를 선언하던 것을 =>를 통해 편리하게 사용할 수 있도록 한 것입니다.
+
+```java
+// 기존 방식
+const tempFun = function( param1, param2 ){
+    console.log(param1,param2);
+}
+
+const tempFunsum = function( param1, param2 ){
+    return param1 + param2;
+}
+
+
+// 화살표 함수 사용
+const tempFun2 = ( param1, param2 ) => console.log( param1, param2);
+const tempFunsum2 = (param1, param2) => param1 + param2
+
+
+tempFun("안","녕하세요"); // 안 녕하세요 출력
+tempFun2("안","녕하세요"); // 안 녕하세요 출력
+console.log(tempFunsum(1,2)); // 3
+console.log(tempFunsum2(1,2)); // 3
+```
+
+코드가 2줄이 넘어간다면 블록을 통해 표현하면 됩니다.
+
+```java
+const tempFun2 = ( param1, param2 ) => {
+    console.log( param1, param2);
+    console.log( param2, param1);
+}
+
+tempFun2("안","녕하세요");
+```
+만약 단순 object를 리터럴 형식으로 return 할 경우 아래와 같은 방식으로 해야합니다. 
+
+```java
+const tempFun = ( param1, param2 ) => ({'성':param1, '이름' : param2});
+
+console.log(tempFun("김","석진")); // {성: "김", 이름: "석진"}
+```
+
+화살표 함수 내부에서는 arguments 프로퍼티를 사용할 수 없고 대신 rest파라미터를 사용합니다. ( ...rest rest파라메터라고 부르며 뒤에 
+나옵니다. )
+
+```java
+const tempFun = function (){
+    console.log ( arguments );
+}
+
+const tempFun2 = () => {
+    console.log ( arguments );
+}
+
+const tempFun3 = (...rest) => {
+    console.log ( rest );
+}
+
+tempFun("김","석진"); //Arguments(2)...;
+tempFun3("김","석진"); //  ["김", "석진"]
+tempFun2("김","석진"); // arguments is not defined
+```
+화살표 함수 내부의 this는 Lexical this로 실행 시간에 정해지는 것이 아닌 정적으로 상위 스코프로 고정됩니다.
+
+```java
+function MakeName ( fistName, SecendName ){
+    this.fistName = fistName;
+    this.SecendName = SecendName;
+}
+
+MakeName.prototype.getName = function(){
+    setTimeout(function(){
+        console.log(this);
+        console.log(this.fistName,this.SecendName);
+    }, 1000);
+}
+
+MakeName.prototype.getName2 = function(){
+    setTimeout(() => {
+        console.log(this);
+        console.log(this.fistName,this.SecendName);
+    }, 1000);
+}
+
+const myName = new MakeName("김","석진");
+myName.getName(); // Window 객체, this.fistName은 undifined 떨어집니다.
+myName.getName2(); // MakeName 객체, 김 석진 출력
+```
+# Iteration
+Iteration은 반복처리를 나타내며, 반복 처리를 위한 규약인 프로토콜을 가지고 있습니다. 이터레이션 프로토콜은 Iterable 프로토콜과 Iterator 
+프로토콜로 구성 됩니다.
+
+## Iterable 프로토콜
+이터러블 프로토콜은 오브젝트의 반복 처리를 어떻게 해아하는지에 대한 규약을 정의하며 String, Array, Map, Set, TypedArray, 
+Argument 빌트인 오브젝트는 이런 이터러블 프로토콜을 가지고 있습니다. 또한 DOM의 NodeList도 가지고 있습니다. 이런 오브젝트들은 js엔진이 
+랜던링될 때 이터러블 프로토콜을 설정하기 때문에 따로 사용자가 사전처리를 하지 않아도 반복 처리를 할 수 있습니다. 이런 이터러블 프로토콜이 설정된 오브젝트를 
+이터러블 오브젝트라고 합니다. 자바스크립트는 이터러블 오브젝트에 Symbol.iterator가 있어야 합니다. 즉 위와 같은 빌트인 객체를 상속받는 것이 아닌 
+개별 객체를 만들고 해당 객체를 이터러블 객체로 만들기 위해서는 Symbol.iterator를 추가하고 Symbol.iterator에 반복 처리를 할 
+수 있는 코드를 작성하면 됩니다.
+
+## Iterator 프로토콜
+이터레이터 프로토콜은 오브젝트의 값을 차례대로 어떻게 처리해야하는 지에 대한 규약입니다. 잘 처리되어 있다면 Symbol.iterator().next() 를 
+통해 차례로 값을 가져올 수 있습니다. 
+
 **참고자료** <br> <br>
 -- EMCAScript6 - 김영보 지음<br> 
 {: .notice--info}
