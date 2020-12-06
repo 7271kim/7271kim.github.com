@@ -1,5 +1,5 @@
 ---
-title: Javascript ECMAScript6( ES6 )
+title: Javascript ECMAScript6( ES6 - 이크마6 )
 layout: single
 author_profile: true
 read_time: true
@@ -229,6 +229,140 @@ Argument 빌트인 오브젝트는 이런 이터러블 프로토콜을 가지고
 ## Iterator 프로토콜
 이터레이터 프로토콜은 오브젝트의 값을 차례대로 어떻게 처리해야하는 지에 대한 규약입니다. 잘 처리되어 있다면 Symbol.iterator().next() 를 
 통해 차례로 값을 가져올 수 있습니다. 
+
+# Spread 연산자(...)
+스프레드 연산자는 위에서 설명한 이터러블 오브젝트의 엘리먼트를 하나씩 분리하여 전개합니다. 즉 풀어서 세팅한다는 개념으로 접근하면 됩니다.
+
+```java
+const first = [1,2];
+const second = [5,6];
+const union = [0, ...first, 4, ...second ]; // 1,2 , 5, 6을 풀어서 세팅
+
+console.log( union ); //[0, 1, 2, 4, 5, 6]
+
+const myname = "김석진";
+
+console.log([...myname]);  // ["김", "석", "진"]
+console.log(...myname); // 김 석 진
+
+function paramChect ( one, two ){
+    console.log( one, two );
+}
+
+paramChect( ...union ) // 1 2 >> 호출하는 함수의 파라미터 값을 spread 연산자로 작성하면 함수를 호출하기 전 파라메터 값을 분리해서 전개합니다.
+
+```
+
+## rest 파라미터
+함수의 파라메터로 Spread 연산자를 작성한 형태를 rest 파라미터라고 부릅니다. 코드로 확인하는 것이 직관적이라 코드롤 보시면 무난하게 이해 되 
+실 것입니다. 꼭 호출하는 쪽도 spread 연산자를 통해서 호출해야 정상 동작됩니다.
+
+
+```java
+const first = [1,2];
+const second = [5,6];
+const union = [0, ...first, 4, ...second ];
+
+function restParameter1(...rest ){
+    console.log(rest);
+}
+
+function restParameter2( one, two, ...rest ){
+    console.log(one);
+    console.log(two);
+    console.log(rest);
+}
+
+restParameter1(...union);
+restParameter2(...union);
+```
+
+
+
+{% highlight wl linenos %}
+(6) [0, 1, 2, 4, 5, 6]
+
+0
+1
+(4) [2, 4, 5, 6]
+{% endhighlight %}
+
+## Array-like
+Array는 아니지만 Object르 Array처럼 사용할 수 있도록 한 Object를 Array-like라고 합니다.
+
+ - 배열은 index를 가지고 있다.
+ - 배열은 length를 통해 엘리먼트의 수를 확인할 수 있다.
+<br>
+해당 특징을 만족하는 형태가 Array-like입니다.
+
+
+```java
+const arrayLike = {
+    0 : 'test1',
+    1 : 'test2',
+    length : 2
+}
+
+for( let index = 0; index < arrayLike.length; index++ ){
+    console.log(arrayLike[index]);
+} 
+
+// test1 test2 출력 
+```
+
+
+# Destructuring - 디스트럭처링
+오른쪽에 있는 것을 분해하여 왼쪽에 할당하는 것을 디스럭처링이라고 말합니다. 배열과 객체 2개 다 가능합니다.
+
+## Array 분할 할당
+Array를 분할 할당하는 예제입니다.
+
+```java
+let one, two, three, four, five;
+const val = [4,5,6,[1,2]];
+
+[ one, two, three ] = [ 1,2,3 ];
+console.log( one, two, three); // 1 2 3
+
+[ one, two, three,[ four ,five ] ] = val;
+console.log( one, two, three, four, five); // 4 5 6 1 2
+
+let others = [];
+[ one, ...ohers] = [ 1, 2, 3, 4];
+
+console.log(one, ohers); //1 (3) [2, 3, 4]
+```
+
+
+## Object 분할 할당
+Object를 분할 할당하는 예제입니다. Object를 프로퍼티 단위로 분할하고 프로퍼티 키와 이름이 같은 왼쪽 변수에 값을 할당합니다. 좌측에도 { key : value} 
+형식이라면, value가 변수가 됩니다. 사전에 선언된 변수를 사용하려면 ()로 감싸주어야 합니다. 혹은 var, let, const를 통해 바로 초기화 할 수 있습니다.
+
+
+```java
+let one, two, three, four, five;
+
+({ one, two, three } = { one : 1 , two: 2, three : 3 });
+console.log( one, two, three); // 1 2 3
+
+let { first, second }  = { first : 1, second : 2};
+console.log(first, second); // 1 2
+
+let third, fourth;
+({ one : third, two : fourth } = { one : 3, two : 4})
+console.log( third, fourth); // 3 4
+
+let { one : seventh, two : eighth } = { one : 7, two : 8};
+console.log( seventh, eighth); // 7 8
+
+// 파라메터
+function temp ( { one, two, three : { four : five } } ){
+    console.log( one, two, five ); 
+}
+
+temp( { one : 1, two : 2, three : { four : 5} } ); //1 2 5
+```
+
 
 **참고자료** <br> <br>
 -- EMCAScript6 - 김영보 지음<br> 
