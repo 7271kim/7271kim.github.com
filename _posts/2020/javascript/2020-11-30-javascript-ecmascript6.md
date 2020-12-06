@@ -333,7 +333,6 @@ let others = [];
 console.log(one, ohers); //1 (3) [2, 3, 4]
 ```
 
-
 ## Object 분할 할당
 Object를 분할 할당하는 예제입니다. Object를 프로퍼티 단위로 분할하고 프로퍼티 키와 이름이 같은 왼쪽 변수에 값을 할당합니다. 좌측에도 { key : value} 
 형식이라면, value가 변수가 됩니다. 사전에 선언된 변수를 사용하려면 ()로 감싸주어야 합니다. 혹은 var, let, const를 통해 바로 초기화 할 수 있습니다.
@@ -361,6 +360,115 @@ function temp ( { one, two, three : { four : five } } ){
 }
 
 temp( { one : 1, two : 2, three : { four : 5} } ); //1 2 5
+```
+# Operation - 오퍼레이션
+## 프로퍼트 이름 조합
+문자열 + 변수를 조합하여 object의 프로퍼티 명으로 사용 가능합니다. 조합하려는 이름을 [] 안에 적습니다.
+
+```java
+const temp = "hi_";
+const destructure = "sport";
+const obj = {
+    ["one" + "two"] : 12,
+    [temp + "name"] : "hihi"
+}
+const { [destructure] : value , palyer = "박지성" } =  { sport : "축구" };
+const { [destructure] : value2 , palyer2 = "하.." } =  { sport : "농구", palyer2 : "누구지.." };
+
+console.log(obj.onetwo); // 12
+console.log(obj.hi_name); // hihi
+console.log(value); // 축구
+console.log(palyer); // 박지성
+console.log(palyer2); // 누구지..
+```
+
+## for - of
+위에서 설명한 이터러블 오브젝트를 반복하여 처리합니다. for - in 문과의 차이는 for in문의 경우 대상은 Object이며 열거가능한 프로퍼티가 대상입니다.
+
+```java
+const values = [
+    {item : "연봉", amount : { month : 12, year : 1000 }},
+    {item : "나이", amount : { month : 12, year : 1 }}
+]
+
+for ( let item of [10,20,30]){
+    console.log(item); // 10, 20, 30 출력
+}
+
+for ( let item of "김석진"){
+    console.log(item); // 김, 석, 진 출력
+}
+
+for ( let { item , amount : { month : monthValue, year : yearValue  } } of values ){
+    console.log(item, monthValue, yearValue); // 연봉 12 1000 , index.html:32 나이 12 1 출력
+}
+
+for ( let item of {a : 1, b : 2}){
+    console.log(item); //Uncaught TypeError: {(intermediate value)(intermediate value)} is not iterable 에러 발생
+}
+```
+# Object
+es6에서 추가된 부분을 살펴보겠습니다.
+
+## 오퍼레이션
+변수 이름을 사용하여 Object의 프로퍼티를 설정할 수 있습니다. 함수이름도 생략 가능합니다.
+
+```java
+const one = 1;
+const two = 2;
+const obj = {
+    one,
+    two,
+    getTemp(){
+        return 100;
+    }
+}
+
+console.log( obj.one, obj.two, obj.getTemp()); // 1 2 100 
+```
+
+디스크립터 getter, setter도 사용하기 쉽게 변경되었습니다.
+
+```java
+const one = 1;
+const two = 2;
+const obj = {
+    baseCost : 100,
+    get val(){
+        return this._val;
+    },
+    set val( param ){
+        this._val = this._val != undefined ? this._val + param : param;
+    }
+}
+obj.val = 100;
+obj.val = 100;
+obj.val = 100;
+obj.val = 100;
+console.log( obj.val ); // 400
+```
+
+# Template 리터럴
+문자열 처리를 위한 템플릿을 제공합니다. 사용법은 간단합니다. 특정 부분이 변수로 치환된다고 보시면 됩니다. 코드를 보시면 이해가 되실 것입니다.
+```java
+let nation = '한국';
+
+console.log(`우리 나라는 ${nation} 입니다.`); // 우리 나라는 한국입니다.
+
+nation = '미국'
+console.log(`우리 나라는 ${nation} 입니다.`); // 우리 나라는 미국입니다.
+```
+
+탬플릿 앞에 tag할 함수를 작성한 형태를 tagged 탬플릿이라고 합니다. 함수를 호출하기 전 문자열과 표현식을 분리시켜 파라메터로 넘겨줍니다.
+
+```java
+let one = 1;
+let two = 2;
+function temp ( textArray , plus, minus ){
+    console.log(textArray[0], plus, textArray[1], minus, textArray[2]); // 2 + 1 =  3 입니다. 2 - 1 =  1 입니다.
+}
+
+temp `2 + 1 = ${one + two}입니다. 2 - 1 = ${two - one}입니다.`;
 ```
 
 
