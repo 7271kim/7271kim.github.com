@@ -72,6 +72,14 @@
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:locale" content="{{ site.locale | replace: "-", "_" | default: "en_US" }}">
 <meta property="og:site_name" content="{{ site.title }}">
+{% if author.avatar %}
+  {% if author.avatar contains "://" %}
+    {% assign author_src = author.avatar %}
+  {% else %}
+    {% assign author_src = author.avatar | relative_url %}
+  {% endif %}
+  <meta property="og:image" content="{{ author_src }}">
+{% endif %}
 <meta property="og:title" content="{{ page.title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
 <meta property="og:url" content="{{ canonical_url }}">
 
