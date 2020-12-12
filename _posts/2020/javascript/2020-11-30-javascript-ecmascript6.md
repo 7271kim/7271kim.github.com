@@ -21,7 +21,7 @@ toc_label: 목차
 popular: true
 ---
 최근 Node.js를 공부하면서 Front-End 개발에 높은 가능성과 흥미를 느끼게 되어 front-end 개발자가 되기 위한 첫 관문인 ES6 문법에
-대해 한번 정리하는 게시물을 작성하고자 합니다. 주안점은 차이점을 서술하는 것이지 javascript 문법을 공부하는 포스트는 아닙니다.
+대해 한번 정리하는 게시물을 작성하고자 합니다. 주안점은 javascript 문법을 공부하는 포스트는 아니고 개인적으로 몰랐던 부분을 정리하는 포스트입니다.
 
 **빌트인(Built-in) 오브젝트** : 자바스크립트 엔진이 랜더링 시 미리 생성하는 것으로 개발자가 사전처리 하지 않아도 바로 사용할 수 있는 object입니다. 
 Function, Object, Array, Number, String 등의 오브젝트가 이에 속합니다.<br>
@@ -470,8 +470,261 @@ function temp ( textArray , plus, minus ){
 
 temp `2 + 1 = ${one + two}입니다. 2 - 1 = ${two - one}입니다.`;
 ```
+# Generator 오브젝트 
+function* 와 같은 키워드를 사용한 함수를 제너레이터 함수라고 표현하며 일반적으로 함수를 호출한다면 함수 블록이 1회 실행되지만, 제네레이터 
+오브젝트를 생성하여 반환 후 나누어서 실행할 수 있게 합니다. 생성된 제너레이터는 이터레이터 오브젝트이기 때문에 나누어서 실행 가능합니다. yield 
+키워드 단위로 나누어서 실행합니다.
+
+```java
+
+function* test( one, two ){
+    let tepm = 0;
+    console.log(tepm); // 0
+    tepm += one + two;
+    tepm += yield tepm;
+    /*
+        첫 yield 전 까지 실행하고  멈춤니다. 
+        실행 범위는 
+        
+        let tepm = 0;
+        console.log(tepm); // 0
+        tepm += one + two;
+        tepm += yield
+        
+        입니다.
+
+        yield 우측 tepm이 retrun 값입니다. {value: 3, done: false}
+    */
+
+    
+    console.log(tepm); // 1003
+    tepm += one + two;
+    yield tepm + one + two + 11;
+    /*
+        두번째 yield 전 까지 실행하고  멈춤니다. 
+        실행 범위는 
+        
+        tepm += yield tepm; >>> tepm는 retun하여 사라지고, 들어온 파라메터 값이 yield에 치환됩니다.
+        
+        console.log(tepm); // 3
+        tepm += one + two;
+        
+        
+        입니다.
+
+        yield 우측 tepm + one + two + 11; 값을 리턴합니다. {value: 1020, done: false}
+    */
+
+    console.log(tepm); // 1006
+    yield { 'result' : tepm + '입니다.'};
+
+    /*
+        세번째 yield 전 까지 실행하고  멈춤니다. 
+        실행 범위는 
+        
+        console.log(tepm);
+        
+        입니다.
+
+        yield 우측  { 'result' : tepm + '입니다.'} 값을 리턴합니다. {value: {result: "106입니다."}, done: false}
+    */
+
+    return tepm;
+}
+
+let getObj = test(1,2);
+
+console.log(getObj); // Generator를 반환합니다.
+console.log( getObj.next() ); // 첫번째 {value: 3, done: false}
+console.log( getObj.next(1000) ); //두번째  {value: 1020, done: false}
+console.log( getObj.next() ); // 세번째 {value: {result: "106입니다."}, done: false}
+console.log( getObj.next() ); // 더 이상 yield가 없기 때문에 최종 return을 반환합니다. {value: 1006, done: true}
+
+```
+
+.return(param)을 통해 이터레이터를 종료 시킬 수 있습니다.
+
+```java
+function* test(){
+    let temp = 0;
+    while( true ){
+        console.log(temp);
+        temp += yield temp;
+    }
+
+}
+
+getObj = test();
+console.log( getObj.next()); // {value: 0, done: false}
+console.log( getObj.next(10)); // {value: 10, done: false}
+console.log( getObj.next(100)); // {value: 110, done: false}
+console.log( getObj.return(1000)); // {value: 1000, done: true}
+console.log( getObj.next()); // {value: undefined, done: true}
+console.log( getObj.next()); // {value: undefined, done: true}
+```
+
+yield* [배열] 을 통해 next로 받아올 인자를 미리 정할 수도 있습니다.
+
+```java
+function* test(){
+    while( true ){
+        yield* [1,2,3]
+    }
+
+}
+
+getObj = test();
+console.log( getObj.next()); // {value: 1, done: false}
+console.log( getObj.next()); // {value: 2, done: false}
+console.log( getObj.next()); // {value: 3, done: false}
+console.log( getObj.next()); // {value: 1, done: false}
+```
+
+# Class 오브젝트
+JAVA와 같은 객체지향 언어처럼 문법을 구현할 수 있도록 제공해주는 객체입니다. 
+
+```java
+class Member {
+    static TEMP_NAME ="hihi";
+
+    constructor( name, age ) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    // getter
+    get getName(){
+        return this._name;
+    }
+    // setter 
+    set setName( name ){
+        this._name = name;
+    }
+
+    // getter
+    get age(){
+        return this._age;
+    }
+    // setter 
+    set age( age ){
+        this._age = age;
+    }
+
+    toString(){
+        console.log( `${Member.TEMP_NAME} 난 ${this.name}이고 ${this.age}살 이야` )
+    }
+    getLeader(){
+        console.log("리더 취득");
+    }
+
+}
+
+class Soccer extends Member {
+    constructor( name, age, part ){
+        super(name, age);
+        this.part = part;
+    }
+
+    toString(){
+        super.toString();
+        console.log( `파트는 ${this.part}야` )
+    }
+    getData(){
+        console.log("데이터 취득");
+    }
+
+}
+
+const soccer = new Soccer("김석진", "8", "유소년 축구팀" );
+soccer.toString();
+soccer.getLeader();
+soccer.getData();
+```
+
+{% highlight wl linenos %}
+hihi 난 김석진이고 8살 이야
+파트는 유소년 축구팀야
+리더 취득
+데이터 취득
+{% endhighlight %}
+
+#Symbol 오브젝트
+es5에서는 primitive 타입에 null, string, number, undefined, boolean 5개가 있었지만 es6에서는 symbol이 
+추가되었습니다. Wrapper 클래스는 Symbol 오브젝트입니다. Symbol을 통해 생성된 값은 프로그램 전체를 통해 유일하며 개발자 도구에서도 그 
+값을 볼 수 없습니다.
+
+```java
+var temp = Symbol();
+console.log(temp); // Symbol()
+```
+
+유일한 값을 갖는 symbol의 특징을 이용하여 object의 키로 사용할 수 있습니다. [] 안에 변수를 집어넣는 의미는 symbol-keyed property임을 
+명시하는 것입니다. 즉 심볼값은 문자열이 아님을 명시하는 것과 비슷합니다.
+
+```java
+const temp = Symbol("123");
+obj = {
+    [temp] : 'ppppp'
+}
+
+console.log(obj[temp]) // ppppp
+```
+Symbol은 Enumerale이 false이기 떄문에 for-in문을 통해 출력되지 않습니다.
+이외의 Symbol 메서드와 Symbol 프로퍼티에 관해서는 정리하지 않겠습니다.
+
+# Map 오브젝트
+Map 오브젝트의 특징은 Objec의 경우 키 값이 String과 Symbol만이 가능하지만 Map은 Object, Function과 같은 오브젝트도 
+키가 될 수 있습니다. 또한 key는 추가한 순서대로 읽힌다는 특징이 있습니다. Map을 생성할 때 파라메터는 이터러블 오브젝트이어야 합니다. 이터러블 
+오브젝트를 작성하고 그 안에 배열로 [key,value]를 작성해야 합니다.
+```java
+const emptMap = new Map([
+    ["key1","value1"],
+    ["key4","value4"],
+    ["key2","value2"],
+    ["key3","value3"]
+]);
+
+emptMap.set(temp, temp);
+
+function temp(){
+    console.log("temp");
+}
+console.log(emptMap.get("key1")) //value1
+emptMap.get(temp)() //temp
+
+for( const [ key, value ] of emptMap ){
+    console.log( emptMap.get(key) ); // 1-> 4 -> 2 -> 3 - > temp 순서가 보장된다.
+}
+```
+# WeakMap 오브젝트 
+Map 오브젝트의 key에 오브젝트만 지정할 수 있으며, string, number, symbol과 같은 값을 작성할 수 없습니다. Weakmap의 장점은 느슨한 
+연결 때문에 Weakmap을 사용하는 객체 또한 GC대상이 됩니다. 
+
+```java
+let temp = { temp: "aaa" };
+let temp2 = [temp];
+
+temp = null; // 지웠음에도
 
 
+setTimeout(() => {
+    console.log(temp2); // 존재 
+}, 10000);
+
+```
+
+```java
+let temp = { temp: "aaa" };
+const emptMap = new WeakMap([
+    [{ temp: "aaa" },"오브젝트"]
+]);
+
+temp = null;
+
+setTimeout(() => {
+    console.log(emptMap); // 제거됨
+}, 10000);
+```
 **참고자료** <br> <br>
 -- EMCAScript6 - 김영보 지음<br> 
 {: .notice--info}
