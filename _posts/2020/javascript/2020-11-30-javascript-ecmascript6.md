@@ -648,7 +648,7 @@ hihi 난 김석진이고 8살 이야
 데이터 취득
 {% endhighlight %}
 
-#Symbol 오브젝트
+# Symbol 오브젝트
 es5에서는 primitive 타입에 null, string, number, undefined, boolean 5개가 있었지만 es6에서는 symbol이 
 추가되었습니다. Wrapper 클래스는 Symbol 오브젝트입니다. Symbol을 통해 생성된 값은 프로그램 전체를 통해 유일하며 개발자 도구에서도 그 
 값을 볼 수 없습니다.
@@ -732,6 +732,211 @@ Set은 java의 Set과 기능이 같습니다. WeakSet은 WeakMap처럼 value로 
 const temp = new Set([1,2,3,3,3,3,3,"스포츠"]);
 console.log(temp) // {1, 2, 3, "스포츠"}
 ```
+
+# Proxy 오브젝트
+Proxy의 사전적인 의미는 "대리"입니다. 즉 프록시는 메서드의 기본적인 오퍼레이션과 행위를 중간에 가로채어 대신 일련의 처리를 하는것을 말하니다. 
+주로 setter, getter, construct 등등 빌트인 오브젝트에 내부 메서드들에 대해 중간에 가로 채 특정 부분을 추가할 수 있습니다. 사용법은 
+new Proxy( target , 실행할 handler ); 입니다. 그럼 object에 키와 value를 추가할 때 set 트랩과, get 트랩을 
+이용하여 특정 행위를 제어하는 코드를 작성해 보겠습니다. 아래 외 다양한 것들이 존재하니 필요시 추가로 포스트 하겠습니다.
+
+```java
+const obj = {
+    'name' : '김석진',
+    'job' : '개발자'
+}
+
+const handler1 = {
+    set( target, key, value, receiver ){
+        // set 트랩은 총 4개의 파라메터를 가질 수 있습니다.
+        // 1. target, 2. 프로퍼티 key, 3. 프로퍼티 value, 4. set이 포함된 Proxy 인스턴스 receiver ( 사용하지 않는 경우도 많음 )
+        if( key === 'age' ){
+            if( !Number.isInteger(value) ){
+                value = parseInt(value) + 100;
+            }
+        }
+
+        target[key] = value;
+    },
+    get( target, key, receiver ){   
+        // get 트랩은 총 3개의 파라메터를 가질 수 있습니다. setter와 동일합니다.
+        if( key === 'age' ){
+            return `나이는 ${target[key]} 입니다.`
+        }
+    }
+}
+
+const obj_proxy = new Proxy( obj, handler1 );
+
+obj_proxy.age = '10';
+console.log( obj_proxy.age ); // 나이는 110 입니다.
+```
+
+# Reflect 오브젝트 
+Reflect 오브젝트의 모든 메서드는 static 메서드이기 때문에 바로 호출할 수 있습니다. Proxy 오브젝트의 모든 트랩 메서드는 Reflect도 
+가지고 있습니다. 실질적으로 Reflect를 사용하는 의미에 대한 부분이 정확히 이해가 되지 않아 Reflect가 있다라는 정도만 하고 넘어가겠습니다.
+
+# Promise
+자바스크립트는 싱글스레드 동기( Synchronous ) 방식으로 실행하기 때문에 첫 줄이 완료되어야 두번째 줄이 실행됩니다. 하지만 통신과 같은 경우 
+비동기로 처리가 되어야 하기 때문에 비동기 상황에서의 컨트롤을 하기 위해 존재합니다. 만약 아래와 같은 비동기 상황에서 2번 뒤에 꼭 3번이, 3번 뒤에 
+꼭 4번이 실행이 되어야 할 때! 그런 경우 필요합니다.
+
+```java
+console.log('1번');
+setTimeout( ()=> console.log('2번'), 0);
+console.log('3번');
+setTimeout( ()=> console.log('4번'), 0);
+setTimeout( ()=> console.log('5번'), 0);
+console.log('6번');
+```
+
+{% highlight wl linenos %}
+1번
+3번 
+6번
+2번
+4번 
+5번
+{% endhighlight %}
+
+동기방식이기 때문에 1번이 끝날 때까지 2번은 시작할 수 없습니다. 이를 Promise를 통한 비동기 식으로 바꾼다면 아래와 같이 적용하면 됩니다. 
+
+```java
+const logGet = ( param, resolve ) => { 
+        console.log(`${param}`); 
+        resolve();
+    };
+
+const getpromise = (param) => {
+    return new Promise ( ( resolve, resject ) =>{
+        setTimeout( ()=> {
+            console.log(`${param}`);
+            resolve( resolve );
+        }, 0);
+    })
+}
+
+new Promise(( resolve, resject ) => {
+        logGet('1번', resolve)
+    })
+    .then( () => getpromise('2번'))
+    .then( (resolve) => logGet('3번',resolve))
+    .then( () => getpromise('4번'))
+    .then( () => getpromise('5번'))
+    .then( (resolve) => logGet('6번',resolve))
+```
+{% highlight wl linenos %}
+1번
+2번 
+3번
+4번
+5번 
+6번
+{% endhighlight %}
+
+ Promise의 큰 틀은 4가지로 존재합니다.
+
+ - Pending : new Promise();를 호출한 상태 , Fulfilled 전 상태
+ - Fulfilled  : resolve 된 상태
+ - Rejected : reject 된 상태
+ - Settled : 결론이 난 상태 
+
+promise는 new를 통해 생성하며 resolve와 reject를 파라메터로 가지는 함수를 받고 있습니다. resolve, resolve는 추후 실행부에게 
+결과를 알려줄 때 사용됩니다. new를 통해 Promise객체를 만들고 resolve나 reject를 실행되기 전 상태를 pending 상태입니다.
+
+```java
+const isGo = true;
+    const promiseTemp = new Promise( ( resolve, resject ) =>{
+        if( isGo ){
+            const nextData = {};
+        nextData.isgo = true;
+        resolve( nextData )
+    } else {
+        const nextData = {};
+        nextData.isgo = false;
+        resject( nextData );
+    }
+})
+```
+위와 같이 선언한 Promise를 실행하는 부분을 짜보겠습니다.
+
+```java
+const isGo = true;
+const promiseTemp = new Promise( ( resolve, resject ) =>{
+    if( isGo ){
+        const nextData = {};
+        nextData.isgo = true;
+        resolve( nextData )
+    } else {
+        const nextData = {};
+        nextData.isgo = false;
+        resject( nextData );
+    }
+})
+
+promiseTemp.then(
+    ( resultData )=>{
+        // 성공시 부분입니다.
+        console.log('성공');
+        console.log(resultData);
+    },
+    (resultData)=>{
+        // 실패시 부분입니다.
+        console.log('실패');
+        console.log(resultData);
+    }
+)
+```
+{% highlight wl linenos %}
+성공
+index.html:36 {isgo: true}
+{% endhighlight %}
+
+isGo를 true, false로 바꾸면서 해보시면 이해가 됩니다.
+<br>
+<br>
+<br>
+만약 여러 promise를 사용한 채 실패에 대한 출력 내용이 같을 경우 catch를 통해 처리한다면 간편합니다. finally은 resolve가 되던, reject이되던 
+결과에 상관없이 동작할 때 유용합니다.
+
+```java
+const logGet = ( param, resolve ) => { 
+        if(param === '3번'){
+            throw new Error("에러가 발생했습니다.");
+        } else {
+            console.log(`${param}`); 
+            resolve();
+        }
+        
+    };
+
+const getpromise = (param) => {
+    return new Promise ( ( resolve, resject ) =>{
+        setTimeout( ()=> {
+            console.log(`${param}`);
+            resolve( resolve );
+        }, 0);
+    })
+}
+
+new Promise(( resolve, resject ) => {
+        logGet('1번', resolve)
+    })
+    .then( () => getpromise('2번'))
+    .then( resolve => logGet('3번',resolve))
+    .then( () => getpromise('4번'))
+    .then( () => getpromise('5번'))
+    .then( resolve => logGet('6번',resolve))
+    .catch( error => console.log( error.message ) )
+    .finally( () => console.log('end') );
+```
+{% highlight wl linenos %}
+1번
+2번
+에러가 발생했습니다.
+end
+{% endhighlight %}
+
+promise all, promisecath
 
 
 **참고자료** <br> <br>
