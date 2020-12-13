@@ -936,8 +936,6 @@ new Promise(( resolve, resject ) => {
 end
 {% endhighlight %}
 
-promise all, promisecath
-
 
 **참고자료** <br> <br>
 -- EMCAScript6 - 김영보 지음<br> 
