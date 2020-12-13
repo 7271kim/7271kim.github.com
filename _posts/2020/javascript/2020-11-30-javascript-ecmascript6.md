@@ -725,6 +725,15 @@ setTimeout(() => {
     console.log(emptMap); // 제거됨
 }, 10000);
 ```
+# Set, WeeakSet 오브젝트 
+Set은 java의 Set과 기능이 같습니다. WeakSet은 WeakMap처럼 value로 object만 가능합니다.
+
+```java
+const temp = new Set([1,2,3,3,3,3,3,"스포츠"]);
+console.log(temp) // {1, 2, 3, "스포츠"}
+```
+
+
 **참고자료** <br> <br>
 -- EMCAScript6 - 김영보 지음<br> 
 {: .notice--info}
