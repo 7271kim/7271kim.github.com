@@ -151,6 +151,105 @@ private static String revers( String input ) {
 }
 ```
 
+## 울타리 잘라내기
+너비가 같은 일정한 울타리가 있습니다. 시간이 지남에 따라 판자들이 부서지거나 망가져 높이가 불규칙적으로 변한 관계로 울타리를 통째로 교체하기로 했습니다. 
+이 때, 버리는 울타리의 일부를 직사각형으로 잘라 재활용 하고 싶습니다. 만약 input으로 fence의 높이가 배열로 주어질 때, 최대로 재활용 할 
+수 있는 fence의 크기를 계산하는 알고리즘을 도출하시오. 단 아래 이미지의 3번째 처럼 대각선은 불가능 합니다. ( input의 최대 크기는 20000개 )
+
+![fence이미지](/assets/images/post/algo/fence.png){: .align-center .open-new}
+
+### 완전탐색
+만약 완전 탐색으로 문제를 푼다면, 기둥 하나를 처음부터 끝가지 잘라서 매치 해보는 것입니다.
+```java
+{% raw %}
+private static int maxIndex = 0;
+    
+public static void main(String args[]){
+    int[] input = {1,4,4,4,4,1,1}; // 결과 16
+    System.out.println(maxFence(input));
+}
+
+private static int maxFence(int[] input) {
+    int result = 0;
+    maxIndex = input.length;
+    for( int left = 0; left < maxIndex; left++ ) {
+        int minHeight = input[left];
+        for( int right = left; right < maxIndex; right++ ) {
+            minHeight = Math.min(minHeight, input[right]);
+            result = Math.max(result, minHeight*(right - left +1 ));
+        }
+    }
+    
+    return result;
+}
+{% endraw %}
+```
+해당 방법은 2중 for문으로 인해 input의 최대 크기가 20000개 이기 때문에 20000*20000 4억번의 연산이 필요해 통과하기 어려울 수 
+있습니다.
+
+### 분할정복
+만약 이 문제를 분할정복으로 푼다면 어떻게 풀 수 있을까요? 최대 넓이를 찾는다를 기준으로 중간을 기점으로 왼쪽 영역의 최대, 오른쪽 영역의 최대로 나누어 
+회귀를 적용한다면 속도가 어마하게 빨라질 것 같습니다. 단. 걸쳐있을 때도 가정해야 합니다. 걸쳐있을 때는 걸쳐있는 모든 경우의 max를 비교하여 찾으면 
+됩니다. 아래 이미지 처럼 2개로 시작하여, 왼쪽 오른쪽을 비교하여 더 큰 막대기쪽으로 작은것 기준으로 넓혀가면서 면적을 비교하는 것입니다.
+
+![fence이미지](/assets/images/post/algo/fence2.png){: .align-center .open-new}
+
+```java
+{% raw %}
+private static int maxIndex = 0;
+private static int[] inputData;
+
+public static void main(String args[]){
+    int[] input = {1,4,4,4,4,1,1}; // 결과 16
+    System.out.println(maxFence(input));
+}
+
+private static int maxFence(int[] input) {
+    inputData = input;
+    maxIndex = input.length-1;
+    return solve( 0, maxIndex );
+}
+
+private static int solve( int start, int end ) {
+    if( start == end ) {
+        return inputData[start];
+    } else {
+        int mid = ( start + end )/2;
+        int leftMax = solve( start, mid );
+        int rightMax = solve( mid+1, end );
+        int result = Math.max(leftMax, rightMax);
+        
+        int leftCheck = mid;
+        int rightCheck = mid+1;
+        
+        int height =  Math.min(inputData[leftCheck], inputData[rightCheck]);
+        result = Math.max(result, height*2); // 중앙에 걸쳐있는 2개가 최대인 경우 확인.
+        
+        while( start < leftCheck || rightCheck < end  ) {
+            if( rightCheck < end && ( leftCheck == start || inputData[leftCheck-1] < inputData[rightCheck+1] ) ) {
+                rightCheck++;
+                height = Math.min(height, inputData[rightCheck]);
+                // 우측으로 확장해야하는 케이스 외 모두 좌측 확장
+                // 왼쪽이 끝났거나, 왼쪽보다 오른쪽 막대가 더 커서 우측으로 자를 수 있을 때.
+            } else {
+                leftCheck--;
+                height = Math.min(height, inputData[leftCheck]);
+            }
+            
+            result = Math.max(result, (rightCheck-leftCheck+1)*height); // 좌 우 확장해 나가면서 확인
+        }
+        
+        return result;
+        
+    }
+    
+}
+{% endraw %}
+```
+
+해당 방법은 1/2씩 나누어 짐으로 O(logN)과 내부적으로 중간 확인을 위한 N번씩 반복이 존재함으로 O(NlogN) 즉 대략 29만번의 연산이면 해답을 
+구할 수 있어 시간내에 충분히 풀 수 있습니다.
+
 **참고자료** <br> <br>
 -- 인사이트 - 프로그래밍대회에서 배우는 알고리즘 문제해결 전략( 저자 - 구종만 ) ( C언어 ) <br> 
 {: .notice--info}
